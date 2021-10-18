@@ -2,8 +2,12 @@ import axios from  'axios'
 
 const listApi = axios.create({baseURL:`https://pb-nc-news.herokuapp.com/api`})
 
-const getArticles = () => {
-    return listApi.get(`/articles`)
+const getArticles = (sort_by) => {
+    return listApi.get(`/articles`, {
+      params: {
+        sort_by: sort_by
+      }
+    })
     .then(({data}) => {
       return data.allArticles
     })
@@ -17,4 +21,11 @@ const getArticles = () => {
     })
   }
 
-  export { getArticles, getSingleArticle }
+  const getCommentsByArticle = (article_id) => {
+    return listApi.get(`/articles/${article_id}/comments`).then(({data}) => {
+      console.log(data)
+      return data.commentsByArticleId
+    })
+  }
+
+  export { getArticles, getSingleArticle, getCommentsByArticle }

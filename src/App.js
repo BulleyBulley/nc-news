@@ -7,6 +7,7 @@ import Logo from './components/Logo';
 import Sidebar from './components/Sidebar'
 import ReadingList from './components/ReadingList';
 import ShowSingleArticle from './components/ShowSingleArticle';
+import ShowComments from './components/ShowComments';
 
 function App() {
   return (
@@ -22,7 +23,10 @@ function App() {
     </Route>
     <Route exact path='/articles/:article_id'>
       <Sidebar />
+      <section className="single_article_section_class">
       <ShowSingleArticle />
+      <ShowComments />
+      </section>
     </Route>
     <Route exact path='/reading_list'>
       <Sidebar />
