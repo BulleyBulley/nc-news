@@ -18,11 +18,11 @@ const ListArticles = ({ articles }) => {
                     </div>
                     <div className="articles_list_topic">
                     
-                      <h3><strong>Topic:</strong> {article.topic}</h3>
+                      <h3>Topic:<strong>{article.topic}</strong></h3>
                       
                     </div>
                     <div className="articles_list_author">
-                      <h3><strong>Author:</strong> {article.author}</h3>
+                      <h3>Author: <strong>{article.author}</strong></h3>
                     </div>
                     <div className="articles_list_footer">
                       <h4>Comments: {article.comment_count}</h4>

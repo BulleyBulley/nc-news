@@ -16,13 +16,13 @@ const ListSingleArticle = ({ singleArticle }) => {
                 </div>
                 <div className="single_article_list_topic">
                   <h3>
-                    <strong>Topic:</strong> {singleArticle.topic}
+                    Topic: <strong>{singleArticle.topic}</strong>
                   </h3>
                 </div>
 
                 <div className="single_article_list_author">
                   <h3>
-                    <strong>Author:</strong> {singleArticle.author}
+                    Author: <strong>{singleArticle.author}</strong>
                   </h3>
                 </div>
                 <div className="single_article_list_body">

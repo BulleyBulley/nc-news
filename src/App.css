@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
@@ -35,8 +36,6 @@
 
 .nav_class {
   grid-area: a;
-
-  border-width: 0.1vw;
   display: flex;
   justify-content: flex-end;
   background: rgb(196, 196, 196);
@@ -48,7 +47,7 @@
 }
 
 .nav_text {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.637);
   font-size: 1.3rem;
   margin: 0;
   text-decoration: none;
@@ -91,6 +90,7 @@
   grid-area: c;
   background: rgba(196, 196, 196, 0.4);
   border-radius: 20px;
+  margin-right: 5vw;
 }
 
 .home_section_class {
@@ -108,8 +108,8 @@
   box-shadow: 0px 10px 20px 5px rgba(110, 110, 108, 0.7);
   border-radius: 10px;
   display: grid;
-  grid-gap: 1vh;
-  margin-bottom: 5vh;
+  grid-gap: 0.2vh;
+  margin-bottom: 3vh;
   
 
   grid-template-rows: 1fr 0.5fr 0.5fr;
@@ -135,13 +135,15 @@
   font-size: 1.1rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  line-height: 1em;
+  line-height: em;
   padding-left: 1vw;
+  color:rgb(19, 11, 1)
 }
 
 .articles_class h2:hover {
   color: beige;
   cursor: pointer;
+  transition: 300ms;
 }
 
 .articles_class h3 {
@@ -168,7 +170,7 @@
 
 .articles_list_header {
   grid-area: article_header;
-  background: linear-gradient(315deg, #940000 49.43%, #c41001 100%);
+  background: linear-gradient(315deg, #c4040467 49.43%, #c4110118 100%);
   border-radius: 5px;
 }
 
@@ -279,12 +281,13 @@
 .single_article_class p {
   font-size: 1rem;
   font-family: roboto;
+  padding-left: 1vw;
   
 }
 
 .single_article_list_header {
   grid-area: single_article_header;
-  background: linear-gradient(315deg, #940000 49.43%, #c41001 100%);
+  background: linear-gradient(315deg, #c4040467 49.43%, #c4110118 100%);
   border-radius: 5px;
 }
 
@@ -337,8 +340,8 @@
   box-shadow: 0px 10px 20px 5px rgba(110, 110, 108, 0.7);
   border-radius: 10px;
   display: grid;
-  grid-gap: 1vh;
-  margin-bottom: 5vh;
+  grid-gap: 0.5vh;
+  margin-bottom: 1vh;
 
   grid-template-rows: 1fr 0.1fr 0.1fr;
   grid-template-columns: 1fr;
@@ -357,7 +360,7 @@
 .comments_list_author {
   grid-area: comments_author;
   line-height: 0;
-  background: linear-gradient(315deg, #940000 49.43%, #c41001 100%);
+  background: rgba(207, 13, 13, 0.397);
   font-family: "Open Sans", sans-serif;
   border-radius: 5px;
 }
@@ -373,7 +376,7 @@
 .comments_class h3 {
   font-size: 1rem;
   font-family: roboto;
-  font-weight: 700;
+  font-weight: 400;
   padding-left: 1vw;
   color: rgb(19, 11, 1);
   
@@ -397,6 +400,17 @@
   font-family: roboto;
   
 }
+
+
+
+
+
+
+.sidebar_sort_buttons {
+  display: flex;
+}
+
+
 
 @media only screen and (max-width: 768px) {
   .main_body_container {
