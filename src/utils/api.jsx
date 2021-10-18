@@ -12,7 +12,7 @@ const getArticles = () => {
   const getSingleArticle = (article_id) => {
     return listApi.get(`/articles/${article_id}`)
     .then(({data}) => {
-      console.log(data)
+      
       return data
     })
   }

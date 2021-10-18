@@ -6,6 +6,7 @@ import Login from './components/Login'
 import Logo from './components/Logo';
 import Sidebar from './components/Sidebar'
 import ReadingList from './components/ReadingList';
+import ShowSingleArticle from './components/ShowSingleArticle';
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
     <Route exact path='/'>
       <Sidebar />
       <ShowArticles />
+    </Route>
+    <Route exact path='/articles/:article_id'>
+      <Sidebar />
+      <ShowSingleArticle />
     </Route>
     <Route exact path='/reading_list'>
       <Sidebar />

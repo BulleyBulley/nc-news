@@ -4,12 +4,10 @@ import { getArticles } from '../utils/api';
 
 const ShowArticles = () => {
     const [articles, setArticles] = useState([])
-
+    
     useEffect(() => {
         getArticles().then((response) => {
-            //console.log(response)
             setArticles(response)
-            
         })
     },[])
 
