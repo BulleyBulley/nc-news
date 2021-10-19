@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
-import { getCommentsByArticle } from "../utils/api";
+import { getCommentsByArticle } from "../utils/Api";
 import ListComments from "./ListComments";
 
 const ShowComments = () => {

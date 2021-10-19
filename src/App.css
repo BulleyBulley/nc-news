@@ -91,6 +91,9 @@
   background: rgba(196, 196, 196, 0.4);
   border-radius: 20px;
   margin-right: 5vw;
+  margin-left: 2vw;
+  padding-left: 1vw;
+  max-height: 25vh;
 }
 
 .home_section_class {
@@ -408,6 +411,10 @@
 
 .sidebar_sort_buttons {
   display: flex;
+}
+
+.sidebar_section_class h3 {
+  font-family:  roboto;
 }
 
 

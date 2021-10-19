@@ -28,4 +28,13 @@ const getArticles = (sort_by) => {
     })
   }
 
-  export { getArticles, getSingleArticle, getCommentsByArticle }
+  const getUser = (form) => {
+    const username = form.username
+    return listApi.get(`/users/${username}`)
+    .then(({data}) => {
+      //console.log(data)
+      return data
+    })
+  }
+
+  export { getArticles, getSingleArticle, getCommentsByArticle, getUser }

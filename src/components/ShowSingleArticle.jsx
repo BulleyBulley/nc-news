@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import ListSingleArticle from "./ListSingleArticle";
-import { getSingleArticle} from "../utils/api";
+import { getSingleArticle} from "../utils/Api";
 
 
 const ShowSingleArticle = () => {
