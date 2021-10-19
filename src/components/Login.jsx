@@ -41,7 +41,7 @@ const Login = () => {
       return <RequiresLogin isLoggedIn={isLoggedIn}>
           <section className="login_class">
     <div className='login_container'>
-      <h1>Logged in as {form.username}</h1>
+      <h2>Logged in as {form.username}</h2>
       <button onClick={handleLogout}>Logout</button>
       </div>
       </section>
@@ -51,6 +51,7 @@ const Login = () => {
   //if statement for login form
   return (
     <section className="login_class">
+        <div className='login_container'>
       <h1>Login Here</h1>
       <form className="submit_login_class" onSubmit={LoginSubmit}>
         <input
@@ -64,7 +65,7 @@ const Login = () => {
         <input type="submit" value="Submit" />
       </form>
       
-    <p>{err}</p>
+    </div>
     </section>
   );
 };

@@ -417,7 +417,37 @@
   font-family:  roboto;
 }
 
+.login_class {
 
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  
+  height:100vh;
+}
+.login_container {
+  grid-area: x;
+  padding: 1.5vw 1.5vw;
+  margin-top: 30vh;
+  margin-left: 20vw;
+  box-shadow: 0px 10px 20px 5px rgba(110, 110, 108, 0.7);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  max-height: 10vh;
+  max-width: 70vw;
+  min-width:10vw
+  
+  
+}
+
+.login_container form {
+  display: flex;
+}
+
+.login_container h1 h2 {
+  font-family: roboto;
+}
 
 @media only screen and (max-width: 768px) {
   .main_body_container {
