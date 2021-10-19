@@ -5,10 +5,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
-
 .main_body_container {
   display: grid;
-  
+
   grid-template-columns: 2fr 1fr 2fr;
   grid-template-rows: 1fr 4fr 20fr auto;
 
@@ -57,7 +56,6 @@
   padding-right: 2vw;
   padding-left: 2vw;
 }
-
 
 .nav_text:hover {
   background-color: rgba(20, 20, 20, 0.705);
@@ -113,7 +111,6 @@
   display: grid;
   grid-gap: 0.2vh;
   margin-bottom: 3vh;
-  
 
   grid-template-rows: 1fr 0.5fr 0.5fr;
   grid-template-columns: 1fr 1fr;
@@ -127,10 +124,9 @@
   list-style-type: none;
   flex-grow: 1;
   padding: 3vw 5vw;
-  
 }
 
-.articles_class a{
+.articles_class a {
   color: inherit;
 }
 
@@ -138,9 +134,9 @@
   font-size: 1.1rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  line-height: em;
+  line-height: 2em;
   padding-left: 1vw;
-  color:rgb(19, 11, 1)
+  color: rgb(19, 11, 1);
 }
 
 .articles_class h2:hover {
@@ -161,7 +157,6 @@
 .articles_class h3 strong {
   font-variant: small-caps;
   font-size: 1rem;
-  
 }
 
 .articles_class h4 {
@@ -208,14 +203,6 @@
   border-radius: 5px;
 }
 
-
-
-
-
-
-
-
-
 .single_article_section_class {
   grid-area: d;
   overflow-y: scroll;
@@ -231,7 +218,7 @@
   box-shadow: 0px 10px 20px 5px rgba(110, 110, 108, 0.7);
   border-radius: 10px;
   display: grid;
-  
+
   margin-bottom: 0vh;
 
   grid-template-rows: auto auto auto auto;
@@ -240,7 +227,7 @@
     "single_article_header single_article_header"
     "single_article_topic single_article_author"
     "single_article_body single_article_body"
-    "single_article_footer single_article_footer_b"
+    "single_article_footer single_article_footer_b";
 }
 
 .single_article_class ul {
@@ -248,8 +235,6 @@
   flex-grow: 1;
   padding: 3vw 5vw;
 }
-
-
 
 .single_article_class h2 {
   font-size: 1.2rem;
@@ -265,13 +250,11 @@
   font-weight: 700;
   padding-left: 1vw;
   color: rgb(19, 11, 1);
-  
 }
 
 .single_article_class h3 strong {
   font-variant: small-caps;
   font-size: 1.1rem;
-  
 }
 
 .single_article_class h4 {
@@ -285,7 +268,6 @@
   font-size: 1rem;
   font-family: roboto;
   padding-left: 1vw;
-  
 }
 
 .single_article_list_header {
@@ -329,17 +311,15 @@
 }
 
 .comments_class ul {
-  grid-area: single_article_comments; 
-    list-style-type: none;
-    flex-grow: 1;
-    padding: 0 10vw;
-    
-  
+  grid-area: single_article_comments;
+  list-style-type: none;
+  flex-grow: 1;
+  padding: 0 10vw;
 }
 
 .comments_list_container {
   padding: 1.5vw;
-  
+
   box-shadow: 0px 10px 20px 5px rgba(110, 110, 108, 0.7);
   border-radius: 10px;
   display: grid;
@@ -349,9 +329,9 @@
   grid-template-rows: 1fr 0.1fr 0.1fr;
   grid-template-columns: 1fr;
   grid-template-areas:
-  "comments_body"
-  "comments_author"  
-  "comments_votes";
+    "comments_body"
+    "comments_author"
+    "comments_votes";
 }
 
 .comments_list_body {
@@ -382,13 +362,11 @@
   font-weight: 400;
   padding-left: 1vw;
   color: rgb(19, 11, 1);
-  
 }
 
 .comments_class h3 strong {
   font-variant: small-caps;
   font-size: 1.1rem;
-  
 }
 
 .comments_class h4 {
@@ -401,52 +379,46 @@
 .comments_class p {
   font-size: 1rem;
   font-family: roboto;
-  
 }
-
-
-
-
-
 
 .sidebar_sort_buttons {
   display: flex;
 }
 
 .sidebar_section_class h3 {
-  font-family:  roboto;
+  font-family: roboto;
 }
 
 .login_class {
-
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  
-  height:100vh;
+
+  height: 100vh;
 }
 .login_container {
   grid-area: x;
   padding: 1.5vw 1.5vw;
   margin-top: 30vh;
+  
   margin-left: 20vw;
   box-shadow: 0px 10px 20px 5px rgba(110, 110, 108, 0.7);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  max-height: 10vh;
+  max-height: 20vh;
   max-width: 70vw;
-  min-width:10vw
-  
-  
+  min-width: 10vw;
 }
 
 .login_container form {
   display: flex;
+  margin-bottom: 30vh;
 }
 
 .login_container h1 h2 {
   font-family: roboto;
+  font-size: 1em;
 }
 
 @media only screen and (max-width: 768px) {
@@ -462,4 +434,3 @@
       "d";
   }
 }
-

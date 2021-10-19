@@ -8,6 +8,7 @@ import Sidebar from './components/Sidebar'
 import ReadingList from './components/ReadingList';
 import ShowSingleArticle from './components/ShowSingleArticle';
 import ShowComments from './components/ShowComments';
+import SidebarCommentsSection from './components/SidebarComments';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <ShowArticles />
     </Route>
     <Route exact path='/articles/:article_id'>
-      <Sidebar />
+      <SidebarCommentsSection />
       <section className="single_article_section_class">
       <ShowSingleArticle />
       <ShowComments />

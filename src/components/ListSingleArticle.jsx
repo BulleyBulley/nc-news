@@ -1,8 +1,7 @@
 import React from "react";
 
 const ListSingleArticle = ({ singleArticle }) => {
-  console.log(singleArticle);
-
+  
   return (
     
       <div className="single_article_class">

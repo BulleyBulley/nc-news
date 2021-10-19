@@ -1,14 +1,13 @@
 import { useContext, useState } from "react";
 import { getUser } from "../utils/Api";
-import { setUser, UserContext, RequiresLogin } from "../utils/User";
-
+import { UserContext, RequiresLogin } from "../utils/User";
 
 const Login = () => {
   const { isLoggedIn, setUser } = useContext(UserContext);
-  console.log(isLoggedIn, '<------ isLoggedIn');
+  
+  console.log(isLoggedIn, "<------ isLoggedIn");
   const [form, setForm] = useState({ username: "" });
-  const [err, setErr] = useState(null)
-  //console.log(err, '<--- err')
+  const [err, setErr] = useState(null);
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -17,14 +16,12 @@ const Login = () => {
   };
 
   const handleLogout = (event) => {
-      setUser(null)
-  }
-
-  
+    setUser(null);
+  };
 
   const LoginSubmit = (event) => {
     event.preventDefault();
-    setErr(null)
+    setErr(null);
     getUser(form)
       .then((data) => {
         if (data.user[0].username) {
@@ -32,40 +29,39 @@ const Login = () => {
         }
       })
       .catch((err) => {
-        setErr('User Not Found')
+        setErr("User Not Found");
       });
-
-     
   };
   if (isLoggedIn) {
-      return <RequiresLogin isLoggedIn={isLoggedIn}>
-          <section className="login_class">
-    <div className='login_container'>
-      <h2>Logged in as {form.username}</h2>
-      <button onClick={handleLogout}>Logout</button>
-      </div>
-      </section>
-    </RequiresLogin>
+    return (
+      <RequiresLogin isLoggedIn={isLoggedIn}>
+        <section className="login_class">
+          <div className="login_container">
+            <h2>Logged in as {form.username}</h2>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        </section>
+      </RequiresLogin>
+    );
   }
 
   //if statement for login form
   return (
     <section className="login_class">
-        <div className='login_container'>
-      <h1>Login Here</h1>
-      <form className="submit_login_class" onSubmit={LoginSubmit}>
-        <input
-          type="text"
-          name="username"
-          placeholder="username"
-          value={form.username}
-          onChange={handleChange}
-          required
-        />
-        <input type="submit" value="Submit" />
-      </form>
-      
-    </div>
+      <div className="login_container">
+        <h1>Login Here</h1>
+        <form className="submit_login_class" onSubmit={LoginSubmit}>
+          <input
+            type="text"
+            name="username"
+            placeholder="username"
+            value={form.username}
+            onChange={handleChange}
+            required
+          />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     </section>
   );
 };

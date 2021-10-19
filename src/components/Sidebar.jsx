@@ -4,8 +4,6 @@ const Sidebar = () => {
   return (
     <section className="sidebar_section_class">
 
-      <h2>Hello {}</h2>
-      
         <h3>Sort By:</h3>
         <div className='sidebar_sort_buttons'>
 

@@ -1,5 +1,6 @@
 import axios from  'axios'
 
+
 const listApi = axios.create({baseURL:`https://pb-nc-news.herokuapp.com/api`})
 
 const getArticles = (sort_by) => {
@@ -23,7 +24,6 @@ const getArticles = (sort_by) => {
 
   const getCommentsByArticle = (article_id) => {
     return listApi.get(`/articles/${article_id}/comments`).then(({data}) => {
-      console.log(data)
       return data.commentsByArticleId
     })
   }
@@ -37,4 +37,14 @@ const getArticles = (sort_by) => {
     })
   }
 
-  export { getArticles, getSingleArticle, getCommentsByArticle, getUser }
+  const postComment = (form, article_id) => {
+    
+    listApi.post(`/articles/${article_id}/comments`, form).then((response) => {
+      console.log(response)
+      return response
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+
+  export { getArticles, getSingleArticle, getCommentsByArticle, getUser, postComment }

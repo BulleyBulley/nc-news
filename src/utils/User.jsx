@@ -10,7 +10,7 @@ export const RequiresLogin = ({ children }) => {
 
 export const UserProvider = ({children}) =>{
     const [user, setUser] = useState(null)
-    // console.log(user)
+     //console.log(user)
 
     const isLoggedIn = !!user;
 
