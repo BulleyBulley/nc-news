@@ -22,9 +22,13 @@ const SidebarCommentsSection = () => {
     postComment(form, article_id);
   };
 
+  if (!isLoggedIn) return ( 'Login To Comment')
+
   return (
     <RequiresLogin isLoggedIn={isLoggedIn}>
       <section className="sidebar_comments_section">
+
+          <h2>Logged in as: {user}</h2>
         <form className="post_comment_form_class" onSubmit={AddComment}>
           <input
             type="text"

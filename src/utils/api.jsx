@@ -40,8 +40,8 @@ const getArticles = (sort_by) => {
   const postComment = (form, article_id) => {
     
     listApi.post(`/articles/${article_id}/comments`, form).then((response) => {
-      console.log(response)
-      return response
+      //console.log(response.data.postedComment[0])
+      return response.data.postedComment[0]
     }).catch((err) => {
       console.log(err)
     })
