@@ -8,7 +8,7 @@ const Login = () => {
   console.log(isLoggedIn, '<------ isLoggedIn');
   const [form, setForm] = useState({ username: "" });
   const [err, setErr] = useState(null)
-  console.log(err, '<--- err')
+  //console.log(err, '<--- err')
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -16,11 +16,17 @@ const Login = () => {
     setForm((values) => ({ ...values, [name]: value }));
   };
 
+  const handleLogout = (event) => {
+      setUser(null)
+  }
+
+  
+
   const LoginSubmit = (event) => {
     event.preventDefault();
+    setErr(null)
     getUser(form)
       .then((data) => {
-        //console.log(data.user[0].username)
         if (data.user[0].username) {
           setUser(form.username);
         }
@@ -29,9 +35,20 @@ const Login = () => {
         setErr('User Not Found')
       });
 
-    if(err) return <p> Error</p>  
+     
   };
+  if (isLoggedIn) {
+      return <RequiresLogin isLoggedIn={isLoggedIn}>
+          <section className="login_class">
+    <div className='login_container'>
+      <h1>Logged in as {form.username}</h1>
+      <button onClick={handleLogout}>Logout</button>
+      </div>
+      </section>
+    </RequiresLogin>
+  }
 
+  //if statement for login form
   return (
     <section className="login_class">
       <h1>Login Here</h1>
@@ -46,10 +63,7 @@ const Login = () => {
         />
         <input type="submit" value="Submit" />
       </form>
-      <RequiresLogin isLoggedIn={isLoggedIn}>
-
-        <p>Log in Success!</p>
-      </RequiresLogin>
+      
     <p>{err}</p>
     </section>
   );

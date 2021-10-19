@@ -3,6 +3,7 @@ import { createContext, useContext, useState } from "react";
 export const UserContext = createContext();
 
 export const RequiresLogin = ({ children }) => {
+    
     const { isLoggedIn } = useContext(UserContext)
     return <div>{isLoggedIn && children}</div>
 }

@@ -19,7 +19,6 @@ const ShowSingleArticle = () => {
   return (
     <>
       <ListSingleArticle singleArticle={singleArticle} />
-      
     </>
   );
 };
