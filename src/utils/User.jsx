@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 export const UserContext = createContext();
 
@@ -13,6 +13,13 @@ export const UserProvider = ({children}) =>{
      //console.log(user)
 
     const isLoggedIn = !!user;
+    
+    useEffect (() => {
+        const prevLoggedInUser = localStorage.getItem('loggedInUser')
+       if (prevLoggedInUser) {
+        setUser(prevLoggedInUser) 
+    } 
+    },[])
 
     return (
         <UserContext.Provider value={{ user, setUser, isLoggedIn}}>

@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import ShowArticles from './components/ShowArticles';
@@ -10,7 +11,11 @@ import ShowSingleArticle from './components/ShowSingleArticle';
 import ShowComments from './components/ShowComments';
 import SidebarCommentsSection from './components/SidebarComments';
 
+
+
 function App() {
+  const [comments, setComments] = useState([])
+  
   return (
     <BrowserRouter>
     <>
@@ -23,10 +28,10 @@ function App() {
       <ShowArticles />
     </Route>
     <Route exact path='/articles/:article_id'>
-      <SidebarCommentsSection />
+      <SidebarCommentsSection comments={comments} setComments={setComments}/>
       <section className="single_article_section_class">
       <ShowSingleArticle />
-      <ShowComments />
+      <ShowComments comments={comments} setComments={setComments}/>
       </section>
     </Route>
     <Route exact path='/reading_list'>

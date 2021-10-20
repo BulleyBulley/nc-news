@@ -4,7 +4,7 @@ import { useState, useContext } from "react";
 import { postComment } from "../utils/Api";
 import { RequiresLogin, UserContext } from "../utils/User";
 
-const SidebarCommentsSection = () => {
+const SidebarCommentsSection = (props) => {
   const { isLoggedIn, user } = useContext(UserContext);
 
   const { article_id } = useParams();
@@ -14,13 +14,19 @@ const SidebarCommentsSection = () => {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setForm((values) => ({ ...values, [name]: value }));
+    setForm((values) => ({ ...values, [name]: value }))
   };
 
   const AddComment = (event) => {
     event.preventDefault();
-    postComment(form, article_id);
+    //console.log(comments)
+    
+    postComment(form, article_id)
+    //setComments()
+  
   };
+
+  
 
   if (!isLoggedIn) return ( 'Login To Comment')
 
@@ -29,7 +35,8 @@ const SidebarCommentsSection = () => {
       <section className="sidebar_comments_section">
 
           <h2>Logged in as: {user}</h2>
-        <form className="post_comment_form_class" onSubmit={AddComment}>
+        <form className="post_comment_form_class" 
+        onSubmit={AddComment}>
           <input
             type="text"
             name="body"

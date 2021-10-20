@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { getUser } from "../utils/Api";
 import { UserContext, RequiresLogin } from "../utils/User";
 
@@ -16,7 +16,8 @@ const Login = () => {
   };
 
   const handleLogout = (event) => {
-    setUser(null);
+    setUser(null)
+    localStorage.removeItem('loggedInUser');
   };
 
   const LoginSubmit = (event) => {
@@ -26,12 +27,24 @@ const Login = () => {
       .then((data) => {
         if (data.user[0].username) {
           setUser(form.username);
+          localStorage.setItem('loggedInUser', form.username)
         }
       })
       .catch((err) => {
         setErr("User Not Found");
+        console.log(err)
+        
       });
   };
+
+  useEffect(() => {
+    const prevLoggedInUser = localStorage.getItem('loggedInUser')
+
+    if (prevLoggedInUser) {
+      setUser(prevLoggedInUser)
+    }
+  })
+
   if (isLoggedIn) {
     return (
       <RequiresLogin isLoggedIn={isLoggedIn}>
