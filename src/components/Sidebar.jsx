@@ -24,11 +24,12 @@ const Sidebar = (props) => {
     <section className="sidebar_section_class">
       <div className="sidebar_search_container">
         <div className="sidebar_sort_buttons">
-          <h3>Sort By:</h3>
+          <label htmlFor='sort_by_buttons'>Sort By:</label>
 
           <div className="sidebar_sort_buttons_items">
             <input
               type="radio"
+              id="sort_by_buttons"
               value="created_at"
               name="sort_by"
               onClick={() => setSortBy("created_at")}
@@ -58,9 +59,10 @@ const Sidebar = (props) => {
           </div>
 
           <div className="sidebar_sort_buttons_direction">
-            <h3>Order</h3>
+            <label htmlFor='direction_buttons'>Order:</label>
             <input
               type="radio"
+              id='direction_buttons'
               value="asc"
               name="order"
               onClick={() => setOrderBy("asc")}
@@ -97,7 +99,7 @@ const Sidebar = (props) => {
           </div>
 
           <div className="sidebar_topic_search">
-            <label for='topics_id'>Topic:</label>
+            <label htmlFor='topics_id'>Topic:</label>
 
             <select
               className="select_topics_class"
@@ -109,7 +111,7 @@ const Sidebar = (props) => {
                 //if (event.target.value === 'all') {setTopicChoice(null)}
                 setTopicChoice(event.target.value);
               }}
-            > <option>all</option>
+            > <option key="all">all</option>
               {topics.map((topic) => {
                 return <option key={topic.slug}>{topic.slug}</option>;
               })}

@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ListArticles = ({ articles }) => {
+
+  if (articles.length === 0) {return (
+    <h2>No Results Found</h2>
+  )}
   return (
     <section className="home_section_class">
       <div className="articles_class">
