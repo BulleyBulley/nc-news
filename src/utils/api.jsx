@@ -4,7 +4,9 @@ const listApi = axios.create({
   baseURL: `https://pb-nc-news.herokuapp.com/api`,
 });
 
-const getArticles = (sortBy, orderBy, searchTerm, topicChoice) => {
+
+
+const getArticles = (sortBy, orderBy, searchTerm, page, topicChoice) => {
 if (topicChoice === 'all') topicChoice = null
   return listApi
     .get(`/articles`, {
@@ -12,6 +14,7 @@ if (topicChoice === 'all') topicChoice = null
         sort_by: sortBy,
         order: orderBy,
         title: searchTerm,
+        p: page,
         topic: topicChoice
       },
     })

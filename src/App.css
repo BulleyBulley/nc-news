@@ -240,7 +240,13 @@
   font-family: roboto;
 }
 
+.sidebar_title_search {
+  justify-content: center;
+}
 
+.sidebar_topic_search {
+  
+}
 
 
 .single_article_section_class {
@@ -453,6 +459,11 @@
 .login_container h1 h2 {
   font-family: roboto;
   font-size: 1em;
+}
+
+.page_button_container {
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 768px) {

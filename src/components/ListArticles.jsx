@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ListArticles = ({ articles }) => {
+const ListArticles = ({ articles, page, setPage }) => {
 
   if (articles.length === 0) {return (
     <h2>No Results Found</h2>
@@ -39,7 +39,21 @@ const ListArticles = ({ articles }) => {
               );
             })}
           </ul>
+
+          
         </div>
+        <div className="page_button_container">
+        <button
+          className="page-btn"
+          onClick={() => setPage((currPage) => currPage -1)}
+          disabled={page <= 1}
+          >prev page</button>
+          <span>page {page}</span>
+          <button
+          className="page-btn"
+          onClick={() => setPage((currPage) => currPage + 1)}
+          >next page</button>
+          </div>
       </div>
     </section>
   );
