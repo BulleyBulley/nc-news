@@ -1,10 +1,16 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getTopics } from "../utils/Api";
 
 const Sidebar = (props) => {
-  const { setSortBy, setOrderBy, setTitleSearch } = props;
-  const [newSearchTerm, setNewSearchTerm] = useState('')
-
+  const { setSortBy, setOrderBy, setTitleSearch, topics, setSelectedTopics } = props;
+  const [newSearchTerm, setNewSearchTerm] = useState("");
+  useEffect(() => {
+    getTopics().then((response) => {
+      setSelectedTopics(response);
+    });
+  }, []);
+  
   return (
     <section className="sidebar_section_class">
       <div className="sidebar_search_container">
@@ -60,13 +66,13 @@ const Sidebar = (props) => {
             Desc
           </div>
 
-          <div className="sidebar_sort_search">
+          <div className="sidebar_title_search">
             <h3>Title Search</h3>
             <form
               onSubmit={(event) => {
                 event.preventDefault();
-                setTitleSearch(newSearchTerm)
-                setNewSearchTerm('');
+                setTitleSearch(newSearchTerm);
+                setNewSearchTerm("");
               }}
             >
               <label htmlFor="searchTerm">Title Search:</label>
@@ -80,6 +86,25 @@ const Sidebar = (props) => {
               />
               <button>Search</button>
             </form>
+          </div>
+
+          <div className="sidebar_topic_search">
+            <label>
+              <h2>Topic:</h2>
+            </label>
+
+            <select
+              className="select_topics_class"
+              name="topics"
+              onChange={(event) => setSelectedTopics(event.target.value)}
+            >
+              {
+                topics.map((topic) => {
+                  return <option key={topic.slug}>{topic.slug}</option>
+                })
+              }
+              
+            </select>
           </div>
         </div>
       </div>

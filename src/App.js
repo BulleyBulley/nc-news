@@ -18,6 +18,8 @@ function App() {
   const [sortBy, setSortBy] = useState()
   const [orderBy, setOrderBy ] = useState()
   const [searchTerm, setTitleSearch] = useState()
+  const [topics, setSelectedTopics] = useState([])
+  
   
   return (
     <BrowserRouter>
@@ -27,7 +29,7 @@ function App() {
     <Logo />
     <Switch>
     <Route exact path='/'>
-      <Sidebar sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} setTitleSearch={setTitleSearch}/>
+      <Sidebar sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} setTitleSearch={setTitleSearch} topics= {topics} setSelectedTopics={setSelectedTopics}/>
       <ShowArticles sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm}/>
     </Route>
     <Route exact path='/articles/:article_id'>
