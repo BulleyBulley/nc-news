@@ -5,7 +5,7 @@ const listApi = axios.create({
 });
 
 const getArticles = (sortBy, orderBy, searchTerm, topicChoice) => {
-  console.log(topicChoice)
+if (topicChoice === 'all') topicChoice = null
   return listApi
     .get(`/articles`, {
       params: {

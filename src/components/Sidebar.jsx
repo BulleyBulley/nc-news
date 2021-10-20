@@ -3,17 +3,23 @@ import { useState, useEffect } from "react";
 import { getTopics } from "../utils/Api";
 
 const Sidebar = (props) => {
-  const { setSortBy, setOrderBy, setTitleSearch, topics, setSelectedTopics, topicChoice, setTopicChoice } = props;
+  const {
+    setSortBy,
+    setOrderBy,
+    setTitleSearch,
+    topics,
+    setSelectedTopics,
+    topicChoice,
+    setTopicChoice,
+  } = props;
   const [newSearchTerm, setNewSearchTerm] = useState("");
-  
+
   useEffect(() => {
     getTopics().then((response) => {
       setSelectedTopics(response);
     });
   }, []);
 
-  
-  
   return (
     <section className="sidebar_section_class">
       <div className="sidebar_search_container">
@@ -70,7 +76,6 @@ const Sidebar = (props) => {
           </div>
 
           <div className="sidebar_title_search">
-            <h3>Title Search</h3>
             <form
               onSubmit={(event) => {
                 event.preventDefault();
@@ -92,25 +97,22 @@ const Sidebar = (props) => {
           </div>
 
           <div className="sidebar_topic_search">
-            <label>
-              <h2>Topic:</h2>
-            </label>
+            <label for='topics_id'>Topic:</label>
 
             <select
               className="select_topics_class"
+              id='topics_id'
               name="topics"
               value={topicChoice}
               onChange={(event) => {
-                
+                console.log(event.target.value)
+                //if (event.target.value === 'all') {setTopicChoice(null)}
                 setTopicChoice(event.target.value);
               }}
-            >
-              {
-                topics.map((topic) => {
-                  return <option key={topic.slug}>{topic.slug}</option>
-                })
-              }
-              
+            > <option>all</option>
+              {topics.map((topic) => {
+                return <option key={topic.slug}>{topic.slug}</option>;
+              })}
             </select>
           </div>
         </div>

@@ -18,7 +18,7 @@ function App() {
   const [sortBy, setSortBy] = useState()
   const [orderBy, setOrderBy ] = useState()
   const [searchTerm, setTitleSearch] = useState()
-  const [topics, setSelectedTopics] = useState([])
+  const [topics, setSelectedTopics] = useState(['default'])
   const [topicChoice, setTopicChoice] = useState()
   
   
