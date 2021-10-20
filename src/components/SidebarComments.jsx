@@ -19,11 +19,7 @@ const SidebarCommentsSection = (props) => {
 
   const AddComment = (event) => {
     event.preventDefault();
-    //console.log(comments)
-    
     postComment(form, article_id)
-    //setComments()
-  
   };
 
   

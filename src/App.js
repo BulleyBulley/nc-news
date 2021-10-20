@@ -15,6 +15,7 @@ import SidebarCommentsSection from './components/SidebarComments';
 
 function App() {
   const [comments, setComments] = useState([])
+  const [sortBy, setSortBy] = useState('article_id')
   
   return (
     <BrowserRouter>
@@ -24,8 +25,8 @@ function App() {
     <Logo />
     <Switch>
     <Route exact path='/'>
-      <Sidebar />
-      <ShowArticles />
+      <Sidebar sortBy={sortBy} setSortBy={setSortBy}/>
+      <ShowArticles sortBy={sortBy} setSortBy={setSortBy}/>
     </Route>
     <Route exact path='/articles/:article_id'>
       <SidebarCommentsSection comments={comments} setComments={setComments}/>

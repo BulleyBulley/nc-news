@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import ListArticles from './ListArticles';
 import { getArticles } from '../utils/Api';
 
-const ShowArticles = () => {
+const ShowArticles = (props) => {
     const [articles, setArticles] = useState([])
+    const { sortBy, setSortBy } = props
+    
     
     useEffect(() => {
-        getArticles().then((response) => {
+        getArticles(sortBy).then((response) => {
             setArticles(response)
         })
-    },[])
+    },[sortBy])
 
     return (
         <>

@@ -3,7 +3,7 @@ import { getUser } from "../utils/Api";
 import { UserContext, RequiresLogin } from "../utils/User";
 
 const Login = () => {
-  const { isLoggedIn, setUser } = useContext(UserContext);
+  const { isLoggedIn, user, setUser } = useContext(UserContext);
   
   console.log(isLoggedIn, "<------ isLoggedIn");
   const [form, setForm] = useState({ username: "" });
@@ -50,7 +50,7 @@ const Login = () => {
       <RequiresLogin isLoggedIn={isLoggedIn}>
         <section className="login_class">
           <div className="login_container">
-            <h2>Logged in as {form.username}</h2>
+            <h2>Logged in as {user}</h2>
             <button onClick={handleLogout}>Logout</button>
           </div>
         </section>
