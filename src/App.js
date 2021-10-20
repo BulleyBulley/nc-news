@@ -17,6 +17,7 @@ function App() {
   const [comments, setComments] = useState([])
   const [sortBy, setSortBy] = useState()
   const [orderBy, setOrderBy ] = useState()
+  const [searchTerm, setTitleSearch] = useState()
   
   return (
     <BrowserRouter>
@@ -26,8 +27,8 @@ function App() {
     <Logo />
     <Switch>
     <Route exact path='/'>
-      <Sidebar sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy}/>
-      <ShowArticles sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy}/>
+      <Sidebar sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} setTitleSearch={setTitleSearch}/>
+      <ShowArticles sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm}/>
     </Route>
     <Route exact path='/articles/:article_id'>
       <SidebarCommentsSection comments={comments} setComments={setComments} />
