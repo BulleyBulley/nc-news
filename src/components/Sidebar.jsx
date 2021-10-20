@@ -3,13 +3,16 @@ import { useState, useEffect } from "react";
 import { getTopics } from "../utils/Api";
 
 const Sidebar = (props) => {
-  const { setSortBy, setOrderBy, setTitleSearch, topics, setSelectedTopics } = props;
+  const { setSortBy, setOrderBy, setTitleSearch, topics, setSelectedTopics, topicChoice, setTopicChoice } = props;
   const [newSearchTerm, setNewSearchTerm] = useState("");
+  
   useEffect(() => {
     getTopics().then((response) => {
       setSelectedTopics(response);
     });
   }, []);
+
+  
   
   return (
     <section className="sidebar_section_class">
@@ -96,7 +99,11 @@ const Sidebar = (props) => {
             <select
               className="select_topics_class"
               name="topics"
-              onChange={(event) => setSelectedTopics(event.target.value)}
+              value={topicChoice}
+              onChange={(event) => {
+                
+                setTopicChoice(event.target.value);
+              }}
             >
               {
                 topics.map((topic) => {

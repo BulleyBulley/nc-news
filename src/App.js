@@ -19,6 +19,7 @@ function App() {
   const [orderBy, setOrderBy ] = useState()
   const [searchTerm, setTitleSearch] = useState()
   const [topics, setSelectedTopics] = useState([])
+  const [topicChoice, setTopicChoice] = useState()
   
   
   return (
@@ -29,8 +30,8 @@ function App() {
     <Logo />
     <Switch>
     <Route exact path='/'>
-      <Sidebar sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} setTitleSearch={setTitleSearch} topics= {topics} setSelectedTopics={setSelectedTopics}/>
-      <ShowArticles sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm}/>
+      <Sidebar sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} setTitleSearch={setTitleSearch} topics= {topics} setSelectedTopics={setSelectedTopics} topicChoice={topicChoice} setTopicChoice={setTopicChoice}/>
+      <ShowArticles sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} topicChoice={topicChoice} setTopicChoice={setTopicChoice}/>
     </Route>
     <Route exact path='/articles/:article_id'>
       <SidebarCommentsSection comments={comments} setComments={setComments} />
