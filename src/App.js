@@ -15,7 +15,8 @@ import SidebarCommentsSection from './components/SidebarComments';
 
 function App() {
   const [comments, setComments] = useState([])
-  const [sortBy, setSortBy] = useState('article_id')
+  const [sortBy, setSortBy] = useState()
+  const [orderBy, setOrderBy ] = useState()
   
   return (
     <BrowserRouter>
@@ -25,14 +26,14 @@ function App() {
     <Logo />
     <Switch>
     <Route exact path='/'>
-      <Sidebar sortBy={sortBy} setSortBy={setSortBy}/>
-      <ShowArticles sortBy={sortBy} setSortBy={setSortBy}/>
+      <Sidebar sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy}/>
+      <ShowArticles sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy}/>
     </Route>
     <Route exact path='/articles/:article_id'>
-      <SidebarCommentsSection comments={comments} setComments={setComments}/>
+      <SidebarCommentsSection comments={comments} setComments={setComments} />
       <section className="single_article_section_class">
       <ShowSingleArticle />
-      <ShowComments comments={comments} setComments={setComments}/>
+      <ShowComments comments={comments} setComments={setComments} />
       </section>
     </Route>
     <Route exact path='/reading_list'>

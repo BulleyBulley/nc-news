@@ -4,14 +4,15 @@ import { getArticles } from '../utils/Api';
 
 const ShowArticles = (props) => {
     const [articles, setArticles] = useState([])
-    const { sortBy, setSortBy } = props
+    const { sortBy } = props
+    const { orderBy } = props
     
     
     useEffect(() => {
-        getArticles(sortBy).then((response) => {
+        getArticles(sortBy, orderBy).then((response) => {
             setArticles(response)
         })
-    },[sortBy])
+    },[sortBy, orderBy])
 
     return (
         <>

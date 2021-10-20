@@ -1,14 +1,15 @@
-import axios from  'axios'
+import axios from 'axios'
 
 
 const listApi = axios.create({baseURL:`https://pb-nc-news.herokuapp.com/api`})
 
-const getArticles = (sortBy) => {
+const getArticles = (sortBy, orderBy) => {
   
   
     return listApi.get(`/articles`, {
       params: {
-        sort_by: sortBy
+        sort_by: sortBy,
+        order: orderBy
       }
     })
     .then(({data}) => {
