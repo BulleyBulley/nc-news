@@ -10,6 +10,7 @@ import ReadingList from './components/ReadingList';
 import ShowSingleArticle from './components/ShowSingleArticle';
 import ShowComments from './components/ShowComments';
 import SidebarCommentsSection from './components/SidebarComments';
+import PostArticle from './components/PostArticle';
 
 
 
@@ -46,6 +47,9 @@ function App() {
     </Route>
     <Route exact path='/login'>
       <Login />
+    </Route>
+    <Route exact path='/post'>
+      <PostArticle />
     </Route>
     <Route>
       <p>404 - page not found</p>
