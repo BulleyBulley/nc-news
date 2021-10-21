@@ -1,11 +1,23 @@
 import React from "react";
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 import { Link } from "react-router-dom";
 
 
 const ListArticles = ({ articles, page, setPage, loading, err}) => {
   
   
-  if (loading) return <p>Loading.....</p>
+  if (loading) return (
+<div className="preload">
+
+
+    <Box sx={{ width: '100%' }}>
+      <h3>loading...</h3>
+    <LinearProgress />
+  </Box>
+  
+  </div>
+  )
   if (err) return <p>{err}</p>
 
   if (articles.length === 0) {return (

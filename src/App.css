@@ -555,6 +555,21 @@
 .page_button_container {
   display: flex;
   justify-content: center;
+  padding-bottom: 3vh;
+}
+
+.page-btn {
+  margin: 0 0.5vw 0 0.5vw;
+}
+
+/**************             preload      ******************/
+
+.preload {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 /**************             media      ******************/ 
