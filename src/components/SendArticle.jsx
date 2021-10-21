@@ -2,6 +2,25 @@ import React from "react";
 import { useState, useContext, useEffect } from "react";
 import { postArticle, getTopics } from "../utils/Api";
 import { RequiresLogin, UserContext } from "../utils/User";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+const theme = createTheme({
+    palette: {
+      primary: {
+        light: '#ffffff',
+        main: '#212121',
+        dark: '#000000',
+        contrastText: '#000',
+      },
+      secondary: {
+        light: '#ffffff',
+        main: '#e8eaf6',
+        dark: '#b6b8c3',
+        contrastText: '#000',
+      },
+    },
+  });;
 
 const SendArticle = () => {
   const { isLoggedIn, user } = useContext(UserContext);
@@ -23,7 +42,7 @@ const SendArticle = () => {
   }, [setSelectedPostTopics]);
 
   const handleChange = (event) => {
-      console.log(event.name)
+      console.log(event.target.value)
     const name = event.target.name;
     const value = event.target.value;
     setPostForm((values) => ({ ...values, [name]: value }));
@@ -45,12 +64,14 @@ const SendArticle = () => {
 
   return (
     <RequiresLogin isLoggedIn={isLoggedIn}>
-      <section className="sidebar_comments_section">
-        <div className="sidebar_post_comment_container">
+      <section className="post_article_section">
+      <ThemeProvider theme={theme}>
+        <div className="post_article_container">
           <h2>Logged in as: {user}</h2>
-          <form className="post_comment_form_class" onSubmit={AddPost}>
-            <input
+          <form className="post_form_class" onSubmit={AddPost}>
+            <TextField
               type="text"
+              id='post_title_input'
               name="title"
               placeholder="Title"
               value={postForm.title}
@@ -71,8 +92,9 @@ const SendArticle = () => {
                   return <option key={topic.slug}>{topic.slug}</option>;
                 })}
               </select>
-              <input
+              <TextField
                 type="text"
+                id='post_body_input'
                 name="body"
                 placeholder="Add New Post"
                 value={postForm.body}
@@ -84,6 +106,7 @@ const SendArticle = () => {
             </div>
           </form>
         </div>
+        </ThemeProvider>
       </section>
     </RequiresLogin>
   );

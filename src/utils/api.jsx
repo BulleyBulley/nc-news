@@ -72,14 +72,14 @@ const patchVotes = (article_id, vote) => {
 
 const patchVotesComment = (comment_id, voteComment) => {
   return listApi.patch(`/comments/${comment_id}`, {inc_votes: voteComment}).then((response) => {
-    //console.log(response.data.comment)
+   
     return response.data.comment
   })
 }
 
 const postArticle = (postForm) => {
   return listApi.post(`/articles`, postForm).then((response) => {
-    console.log(response.data)
+    
     return response.data.postedArticle;
   })
   .catch((err) => {

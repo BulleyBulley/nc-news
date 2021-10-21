@@ -1,6 +1,28 @@
 import React from "react";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import { useState, useEffect } from "react";
 import { getTopics } from "../utils/Api";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#484848',
+      main: '#212121',
+      dark: '#000000',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ffffff',
+      main: '#e8eaf6',
+      dark: '#b6b8c3',
+      contrastText: '#000',
+    },
+  },
+});;
+
 
 const Sidebar = (props) => {
   const {
@@ -21,10 +43,14 @@ const Sidebar = (props) => {
   }, []);
 
   return (
+    
+  
+
     <section className="sidebar_section_class">
+      <ThemeProvider theme={theme}>
       <div className="sidebar_search_container">
         <div className="sidebar_sort_buttons">
-          <label htmlFor='sort_by_buttons'>Sort By:</label>
+          <label htmlFor="sort_by_buttons">Sort By:</label>
 
           <div className="sidebar_sort_buttons_items">
             <input
@@ -59,10 +85,10 @@ const Sidebar = (props) => {
           </div>
 
           <div className="sidebar_sort_buttons_direction">
-            <label htmlFor='direction_buttons'>Order:</label>
+            <label htmlFor="direction_buttons">Order:</label>
             <input
               type="radio"
-              id='direction_buttons'
+              id="direction_buttons"
               value="asc"
               name="order"
               onClick={() => setOrderBy("asc")}
@@ -84,9 +110,9 @@ const Sidebar = (props) => {
                 setTitleSearch(newSearchTerm);
                 setNewSearchTerm("");
               }}
-            >
-              <label htmlFor="searchTerm">Title Search:</label>
-              <input
+            > 
+              <TextField
+              label="Title Search" variant="filled"
                 type="text"
                 id="searchTerm"
                 onChange={(event) => {
@@ -94,24 +120,24 @@ const Sidebar = (props) => {
                 }}
                 value={newSearchTerm}
               />
-              <button>Search</button>
+              <Button type='submit' variant="contained">Search</Button>
             </form>
           </div>
 
           <div className="sidebar_topic_search">
-            <label htmlFor='topics_id'>Topic:</label>
+            <label htmlFor="topics_id">Topic:</label>
 
             <select
               className="select_topics_class"
-              id='topics_id'
+              id="topics_id"
               name="topics"
               value={topicChoice}
               onChange={(event) => {
-                
-                
                 setTopicChoice(event.target.value);
               }}
-            > <option key="all">all</option>
+            >
+              {" "}
+              <option key="all">all</option>
               {topics.map((topic) => {
                 return <option key={topic.slug}>{topic.slug}</option>;
               })}
@@ -119,6 +145,7 @@ const Sidebar = (props) => {
           </div>
         </div>
       </div>
+      </ThemeProvider>
     </section>
   );
 };
