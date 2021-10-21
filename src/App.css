@@ -479,7 +479,7 @@
 .comments_list_vote {
   grid-area: comments_votes;
   display: flex;
- 
+  align-items: center;
   line-height: 0;
   background: rgba(10, 10, 10, 0.7);
   font-family: "Open Sans", sans-serif;
@@ -487,11 +487,18 @@
   
 }
 
-
+.comment_voter_container {
+  display: flex;
+}
 .comments_list_vote i {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   
+}
+
+.comments_list_vote h4 {
+  margin-left: 1vw;
+  margin-right: 2vw;
 }
 
 .comments_list_vote i:hover {
@@ -518,7 +525,7 @@
   font-size: 0.78em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(255, 255, 255);
-  padding-left: 1vw;
+  
 }
 
 .comments_class p {

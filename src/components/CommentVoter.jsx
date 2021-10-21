@@ -19,11 +19,11 @@ const CommentVoter = ({ votesComment, comment_id }) => {
   return (
     <>
       <div className="comment_voter_container">
-        <label htmlFor="commment_voter_button_id">
+        <label htmlFor="comment_voter_button_id">
           <h4>Votes: {votesComment + voteChangeComment}</h4>
         </label>
         <button
-          className="commment_voter_button"
+          className="comment_voter_button"
           id="comment_voter_button_id"
           onClick={handleVoteComment}
         >
