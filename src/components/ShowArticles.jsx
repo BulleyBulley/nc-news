@@ -4,22 +4,25 @@ import { getArticles } from "../utils/Api";
 
 const ShowArticles = (props) => {
   const [articles, setArticles] = useState([]);
-  const [isLoading, setIsLoading] = useState (false)
+  const [loading, setLoading] = useState (true)
   const [page, setPage] = useState(1)
+  const [err, setErr] = useState(null);
   const { sortBy, orderBy, searchTerm, topicChoice } = props;
 
   useEffect(() => {
     console.log('calling api again')
-    setIsLoading(true)
+    setLoading(true)
     getArticles(sortBy, orderBy, searchTerm, page, topicChoice).then((response) => {
       setArticles(response);
-      setIsLoading(false)
-    });
+      setLoading(false)
+    }).catch((err) => {
+      setLoading(false)
+      setErr('Oh No! Error')    })
   }, [sortBy, orderBy, searchTerm, page, topicChoice]);
 
   return (
     <>
-      <ListArticles articles={articles} page={page} setPage={setPage} />
+      <ListArticles articles={articles} page={page} setPage={setPage} loading={loading} setLoading={setLoading} err={err} setErr={setErr} />
     </>
   );
 };

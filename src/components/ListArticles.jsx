@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { patchVotes } from "../utils/Api";
-import ArticleVoter from "./ArticleVoter";
 
-const ListArticles = ({ articles, page, setPage, article_id, votes }) => {
+
+const ListArticles = ({ articles, page, setPage, loading, err}) => {
   
+  
+  if (loading) return <p>Loading.....</p>
+  if (err) return <p>{err}</p>
 
   if (articles.length === 0) {return (
     <h2>No Results Found</h2>
