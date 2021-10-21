@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { patchVotes } from "../utils/Api";
+import ArticleVoter from "./ArticleVoter";
 
-const ListArticles = ({ articles, page, setPage }) => {
+const ListArticles = ({ articles, page, setPage, article_id, votes }) => {
+  
 
   if (articles.length === 0) {return (
     <h2>No Results Found</h2>
   )}
+  
   return (
     <section className="home_section_class">
       <div className="articles_class">
@@ -32,7 +37,10 @@ const ListArticles = ({ articles, page, setPage }) => {
                       <h4>Comments: {article.comment_count}</h4>
                     </div>
                     <div className="articles_list_footer_b">
+                      
+                      
                       <h4>Votes: {article.votes}</h4>
+                     
                     </div>
                   </div>
                 </li>

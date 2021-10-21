@@ -15,25 +15,32 @@ const SidebarCommentsSection = (props) => {
     const name = event.target.name;
     const value = event.target.value;
     setForm((values) => ({ ...values, [name]: value }))
+
   };
 
   const AddComment = (event) => {
     event.preventDefault();
     postComment(form, article_id)
+    setForm({ username: user, body: "" })
   };
 
   
 
-  if (!isLoggedIn) return ( 'Login To Comment')
+  if (!isLoggedIn) return ( 
+    <section className="sidebar_comments_section">
+    <h2>Login To Comment and Vote</h2>
+    </section>
+    )
 
   return (
     <RequiresLogin isLoggedIn={isLoggedIn}>
       <section className="sidebar_comments_section">
+        <div className="sidebar_post_comment_container">
 
           <h2>Logged in as: {user}</h2>
         <form className="post_comment_form_class" 
         onSubmit={AddComment}>
-          <input
+          <textarea
             type="text"
             name="body"
             placeholder="Add Comment"
@@ -44,6 +51,7 @@ const SidebarCommentsSection = (props) => {
 
           <input type="submit" value="Submit" />
         </form>
+        </div>
       </section>
     </RequiresLogin>
   );

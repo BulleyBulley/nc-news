@@ -1,4 +1,5 @@
 import React from "react";
+import ArticleVoter from "./ArticleVoter";
 
 const ListSingleArticle = ({ singleArticle }) => {
   
@@ -31,7 +32,7 @@ const ListSingleArticle = ({ singleArticle }) => {
                   <h4>Comments: {singleArticle.comment_count}</h4>
                 </div>
                 <div className="single_article_list_footer_b">
-                  <h4>Votes: {singleArticle.votes}</h4>
+                <ArticleVoter votes={singleArticle.votes} article_id={singleArticle.article_id} />
                 </div>
               </div>
             </li>

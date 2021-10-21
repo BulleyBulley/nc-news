@@ -38,7 +38,7 @@ const getCommentsByArticle = (article_id) => {
 const getUser = (form) => {
   const username = form.username;
   return listApi.get(`/users/${username}`).then(({ data }) => {
-    //console.log(data)
+   
     return data;
   });
 };
@@ -47,7 +47,7 @@ const postComment = (form, article_id) => {
   listApi
     .post(`/articles/${article_id}/comments`, form)
     .then((response) => {
-      //console.log(response.data.postedComment[0])
+    
       return response.data.postedComment[0];
     })
     .catch((err) => {
@@ -57,10 +57,16 @@ const postComment = (form, article_id) => {
 
 const getTopics = () => {
   return listApi.get(`/topics`).then(({ data }) => {
-    //console.log(data.topics)
+   
     return data.topics;
   });
 };
+
+const patchVotes = (article_id, vote) => {
+  return listApi.patch(`/articles/${article_id}`, {inc_votes: vote}).then((response) => {
+    return response.data.user
+  })
+}
 
 export {
   getArticles,
@@ -68,5 +74,6 @@ export {
   getCommentsByArticle,
   getUser,
   postComment,
-  getTopics
+  getTopics,
+  patchVotes
 };

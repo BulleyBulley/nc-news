@@ -61,12 +61,12 @@ const Login = () => {
   return (
     <section className="login_class">
       <div className="login_container">
-        <h1>Login Here</h1>
+        <h2>Login Here</h2>
         <form className="submit_login_class" onSubmit={LoginSubmit}>
           <input
             type="text"
             name="username"
-            placeholder="username"
+            placeholder="username (guest? try grumpy19)"
             value={form.username}
             onChange={handleChange}
             required

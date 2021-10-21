@@ -17,6 +17,7 @@ const ListComments = ({ comments }) => {
                   </div>
                   <div className="comments_list_vote">
                     <h4>Votes: {comment.vote}</h4>
+                    
                   </div>
                 </div>
               </li>

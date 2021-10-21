@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("../src/font/css/all.css");
 
 .main_body_container {
   display: grid;
@@ -33,6 +34,8 @@
   text-decoration: none;
 }
 
+/**************             nav      ******************/ 
+
 .nav_class {
   grid-area: a;
   display: flex;
@@ -61,6 +64,8 @@
   background-color: rgba(20, 20, 20, 0.705);
 }
 
+/**************             logo      ******************/ 
+
 .logo_section_class {
   grid-area: b;
   display: flex;
@@ -84,16 +89,14 @@
   text-decoration: none;
 }
 
-.sidebar_section_class {
-  grid-area: c;
-  
-  
-}
+
 
 .home_section_class {
   grid-area: d;
   overflow-y: scroll;
 }
+
+/**************             articles      ******************/ 
 
 .articles_container {
   display: flex;
@@ -160,6 +163,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(255, 255, 255);
   padding-left: 1vw;
+  margin-right: 1vw;
 }
 
 .articles_list_header {
@@ -194,11 +198,24 @@
 
 .articles_list_footer_b {
   grid-area: article_footer_b;
+  
+  
   background: rgba(24, 23, 12, 0.966);
   line-height: 0;
   border-radius: 5px;
 }
 
+.articles_voter_container {
+  display: flex;
+  justify-content: flex-start;
+  
+}
+
+/**************             sidebar      ******************/ 
+.sidebar_section_class {
+  grid-area: c;
+   
+}
 
 .sidebar_search_container {
   display: flex;
@@ -221,7 +238,15 @@
   
 }
 
+.sidebar_search_container label {
+  margin-right: 10px;
+}
 
+.sidebar_search_container #searchTerm {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
 
 .sidebar_sort_buttons_items {
   display: flex;
@@ -247,6 +272,47 @@
 .sidebar_topic_search {
   
 }
+
+
+.sidebar_post_comment_container {
+  
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  
+  flex-wrap: wrap;
+  background: rgba(196, 196, 196, 0.4);
+  border-radius: 20px;
+  margin-right: 5vw;
+  margin-left: 2vw;
+  padding-left: 1vw;
+
+  line-height: 3vh;
+  
+  
+  font-size: 1em;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+
+.sidebar_post_comment_container h2 {
+  font-family: Roboto;
+  font-weight: 300;
+}
+
+.sidebar_post_comment_container textarea {
+  font-family: Roboto;
+  margin-right: 1vw;
+  min-width: 10vw;
+  min-height: 10vh;
+  max-height: 50vh;
+  max-width: 30vw;
+
+}
+
+
+
+/**************             single article      ******************/ 
 
 
 .single_article_section_class {
@@ -308,6 +374,8 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(255, 255, 255);
   padding-left: 1vw;
+  margin-right: 1vw;
+  
 }
 
 .single_article_class p {
@@ -355,6 +423,12 @@
   line-height: 0;
   border-radius: 5px;
 }
+
+
+
+
+/**************             comments      ******************/ 
+
 
 .comments_class ul {
   grid-area: single_article_comments;
@@ -427,7 +501,7 @@
   font-family: roboto;
 }
 
-
+/**************             login      ******************/ 
 
 .login_class {
   display: flex;
@@ -446,25 +520,45 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  max-height: 20vh;
+  flex-grow: 1;
+  
   max-width: 70vw;
   min-width: 10vw;
 }
 
 .login_container form {
   display: flex;
-  margin-bottom: 30vh;
+  
+  
+  min-width: 25vw;
 }
 
-.login_container h1 h2 {
-  font-family: roboto;
-  font-size: 1em;
+.login_container input {
+  display: flex;
+  flex-direction: column;
+  
+  flex-grow: 2;
+  
+  margin-right: 1vw;
+  padding: 1vw 1vw;
 }
+
+.login_class h2 {
+  font-family: Roboto;
+  color: black;
+  font-size: 1.5rem;
+}
+
+/**************             pagination      ******************/ 
+
 
 .page_button_container {
   display: flex;
   justify-content: center;
 }
+
+/**************             media      ******************/ 
+
 
 @media only screen and (max-width: 768px) {
   .main_body_container {
