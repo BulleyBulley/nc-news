@@ -13,7 +13,7 @@ const ShowComments = (props) => {
     getCommentsByArticle(article_id).then((response) => {
       setComments(response);
     })
-  }, [comments])
+  }, [])
 
   return (
     <>

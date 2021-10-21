@@ -7,6 +7,8 @@ const Logo = () => {
             <Link to="/">
             <h1>Read It.</h1>
             </Link>
+
+            
         </section>
     )
 }

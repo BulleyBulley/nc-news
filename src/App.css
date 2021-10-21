@@ -228,9 +228,13 @@
   margin-right: 5vw;
   margin-left: 2vw;
   padding-left: 1vw;
-
+  box-shadow: -3px 59px 67px -50px rgba(0,0,0,0.3);
+  -webkit-box-shadow: -3px 59px 67px -50px rgba(0,0,0,0.3);
+  -moz-box-shadow: -3px 59px 67px -50px rgba(0,0,0,0.3);
   line-height: 3vh;
-  
+  border: solid;
+  border-width: 1px;
+  border-color: rgba(180, 123, 123, 0.404);
   font-family: roboto;
   font-size: 1em;
   padding-top: 2vw;
@@ -288,8 +292,12 @@
   padding-left: 1vw;
 
   line-height: 3vh;
-  
-  
+  box-shadow: -3px 59px 67px -50px rgba(0,0,0,0.3);
+  -webkit-box-shadow: -3px 59px 67px -50px rgba(0,0,0,0.3);
+  -moz-box-shadow: -3px 59px 67px -50px rgba(0,0,0,0.3);
+  border: solid;
+  border-width: 1px;
+  border-color: rgba(180, 123, 123, 0.404);
   font-size: 1em;
   padding-top: 2vw;
   padding-bottom: 2vw;
@@ -470,11 +478,28 @@
 
 .comments_list_vote {
   grid-area: comments_votes;
+  display: flex;
+ 
   line-height: 0;
   background: rgba(10, 10, 10, 0.7);
   font-family: "Open Sans", sans-serif;
   border-radius: 5px;
+  
 }
+
+
+.comments_list_vote i {
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.comments_list_vote i:hover {
+  color: blanchedalmond;
+}
+
+
+
 
 .comments_class h3 {
   font-size: 1rem;

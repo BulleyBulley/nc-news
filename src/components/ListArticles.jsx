@@ -8,20 +8,36 @@ const ListArticles = ({ articles, page, setPage, loading, err}) => {
   
   
   if (loading) return (
+    <section className="home_section_class">
+      
 <div className="preload">
 
 
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '50%' }}>
       <h3>loading...</h3>
     <LinearProgress />
   </Box>
-  
   </div>
+  </section>
   )
   if (err) return <p>{err}</p>
 
   if (articles.length === 0) {return (
+    <div>
     <h2>No Results Found</h2>
+    <div className="page_button_container">
+        <button
+          className="page-btn"
+          onClick={() => setPage((currPage) => currPage -1)}
+          disabled={page <= 1}
+          >prev page</button>
+          <span>page {page}</span>
+          <button
+          className="page-btn"
+          onClick={() => setPage((currPage) => currPage + 1)}
+          >next page</button>
+          </div>
+          </div>
   )}
   
   return (

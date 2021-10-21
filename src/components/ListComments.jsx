@@ -1,4 +1,5 @@
 import React from "react";
+import CommentVoter from "./CommentVoter";
 
 const ListComments = ({ comments }) => {
   return (
@@ -15,9 +16,11 @@ const ListComments = ({ comments }) => {
                   <div className="comments_list_author">
                     <h3>Author: {comment.author}</h3>
                   </div>
+                  <div className="comments_list_vote_container">
                   <div className="comments_list_vote">
-                    <h4>Votes: {comment.vote}</h4>
+                  <CommentVoter votesComment={comment.votes} comment_id={comment.comment_id} />
                     
+                  </div>
                   </div>
                 </div>
               </li>
