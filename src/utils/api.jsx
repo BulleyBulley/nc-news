@@ -77,6 +77,16 @@ const patchVotesComment = (comment_id, voteComment) => {
   })
 }
 
+const postArticle = (postForm) => {
+  return listApi.post(`/articles`, postForm).then((response) => {
+    console.log(response.data)
+    return response.data.postedArticle;
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+}
+
 export {
   getArticles,
   getSingleArticle,
@@ -85,5 +95,6 @@ export {
   postComment,
   getTopics,
   patchVotes,
-  patchVotesComment
+  patchVotesComment,
+  postArticle
 };

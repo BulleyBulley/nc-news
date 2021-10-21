@@ -107,8 +107,8 @@ const Sidebar = (props) => {
               name="topics"
               value={topicChoice}
               onChange={(event) => {
-                console.log(event.target.value)
-                //if (event.target.value === 'all') {setTopicChoice(null)}
+                
+                
                 setTopicChoice(event.target.value);
               }}
             > <option key="all">all</option>
