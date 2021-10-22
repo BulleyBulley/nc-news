@@ -8,8 +8,11 @@ const ArticleDelete = ({article_id}) => {
     const { isLoggedIn } = useContext(UserContext)
 
     const handleDelete = () => {
-        deleteArticle(article_id)
-        goBack()
+
+        deleteArticle(article_id).then(() => {
+          goBack()
+        })
+        
     }
     return (
         <>
