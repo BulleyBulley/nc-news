@@ -4,7 +4,6 @@ import { RequiresLogin, UserContext } from "../utils/User";
 import { goBack } from "../utils/Util";
 
 const ArticleDelete = ({article_id}) => {
-    const [articleToDelete, setArticleToDelete] = useState([])
     const [error, setIsError] = useState(false)
     const { isLoggedIn } = useContext(UserContext)
 
