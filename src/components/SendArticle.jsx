@@ -4,23 +4,9 @@ import { postArticle, getTopics } from "../utils/Api";
 import { RequiresLogin, UserContext } from "../utils/User";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-const theme = createTheme({
-    palette: {
-      primary: {
-        light: '#ffffff',
-        main: '#212121',
-        dark: '#000000',
-        contrastText: '#000',
-      },
-      secondary: {
-        light: '#ffffff',
-        main: '#e8eaf6',
-        dark: '#b6b8c3',
-        contrastText: '#000',
-      },
-    },
-  });;
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../utils/Theme'
+
 
 const SendArticle = () => {
   const { isLoggedIn, user } = useContext(UserContext);

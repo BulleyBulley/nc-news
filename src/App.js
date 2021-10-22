@@ -42,7 +42,7 @@ function App() {
       </section>
     </Route>
     <Route exact path='/reading_list'>
-      <Sidebar />
+      <Sidebar sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} setTitleSearch={setTitleSearch} topics= {topics} setSelectedTopics={setSelectedTopics} topicChoice={topicChoice} setTopicChoice={setTopicChoice}/>
       <ReadingList />
     </Route>
     <Route exact path='/login'>
@@ -52,7 +52,8 @@ function App() {
       <SendArticle />
     </Route>
     <Route>
-      <p>404 - page not found</p>
+      <h2>404 - page not found</h2>
+      <img src='https://httpstatusdogs.com/img/404.jpg' alt='not found'></img>
     </Route>
     </Switch>
     </div>
