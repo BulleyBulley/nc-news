@@ -7,6 +7,7 @@ const Login = () => {
 
   console.log(isLoggedIn, "<------ isLoggedIn");
   const [form, setForm] = useState({ username: "" });
+  // eslint-disable-next-line
   const [err, setErr ] = useState(null);
 
   const handleChange = (event) => {

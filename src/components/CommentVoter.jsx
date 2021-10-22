@@ -4,13 +4,14 @@ import { RequiresLogin, UserContext } from "../utils/User";
 
 const CommentVoter = ({ votesComment, comment_id }) => {
   const [voteChangeComment, setVoteChangeComment] = useState(0);
+  // eslint-disable-next-line
   const [isErrorComment, setIsErrorComment] = useState(false);
   const { isLoggedIn } = useContext(UserContext);
 
   const handleVoteComment = () => {
     setIsErrorComment(false);
     setVoteChangeComment((currVoteChangeComment) => currVoteChangeComment + 1);
-    patchVotesComment(comment_id, 1).catch((isErrorComment) => {
+    patchVotesComment(comment_id, 1).catch(() => {
       setIsErrorComment(true);
       setVoteChangeComment(
         (currVoteChangeComment) => currVoteChangeComment - 1

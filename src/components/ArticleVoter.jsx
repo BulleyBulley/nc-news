@@ -4,6 +4,7 @@ import { RequiresLogin, UserContext } from "../utils/User";
 
 const ArticleVoter = ({ votes, article_id }) => {
   const [voteChange, setVoteChange] = useState(0);
+  // eslint-disable-next-line
   const [error, setIsError] = useState(false);
   const { isLoggedIn } = useContext(UserContext);
 
