@@ -89,6 +89,14 @@ const postArticle = (postForm) => {
   });
 }
 
+const deleteComment = (comment_id) => {
+  return listApi.delete(`/comments/:comment_id`).then ((response) => {
+    return response
+  }).catch((err) => {
+    console.log(err);
+  });
+}
+
 export {
   getArticles,
   getSingleArticle,
@@ -98,5 +106,6 @@ export {
   getTopics,
   patchVotes,
   patchVotesComment,
-  postArticle
+  postArticle,
+  deleteComment
 };

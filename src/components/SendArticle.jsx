@@ -3,7 +3,6 @@ import { useState, useContext, useEffect } from "react";
 import { postArticle, getTopics } from "../utils/Api";
 import { RequiresLogin, UserContext } from "../utils/User";
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../utils/Theme'
 
@@ -17,7 +16,7 @@ const SendArticle = () => {
   const [postForm, setPostForm] = useState({
     author: user,
     body: "",
-    topic: "",
+    topic: "coding",
     title: "",
     votes: '0'
   });
@@ -39,7 +38,7 @@ const SendArticle = () => {
 
   const AddPost = (event) => {
     event.preventDefault();
-    console.log(postForm)
+    
     
     postArticle(postForm);
     setPostForm({ author: user, body: "", topic: [], title: "" });
@@ -75,7 +74,7 @@ const SendArticle = () => {
                 id="topics_id"
                 name="topic"
                 placeholder="Topics"
-                value=''
+                value={postTopicChoice}
                 onChange={(event) => {
                   setPostTopicChoice(event.target.value)
                   handleChange(event)

@@ -439,6 +439,8 @@
   
 font-size: 100%;
 margin-left: 1vw;
+
+
 }
 
 /**************             comments      ******************/
@@ -485,11 +487,16 @@ margin-left: 1vw;
 .comments_list_vote {
   grid-area: comments_votes;
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  justify-content:  space-between;
   line-height: 0;
   background: rgba(10, 10, 10, 0.7);
   font-family: "Open Sans", sans-serif;
   border-radius: 5px;
+  padding-right: 1vw;
+  font-size: 1em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(255, 255, 255);
 }
 
 .comment_voter_container {
@@ -505,6 +512,7 @@ margin-left: 1vw;
 font-size: 100%;
 margin-left: 1vw;
 }
+
 
 .comments_list_vote h4 {
   margin-left: 1vw;
