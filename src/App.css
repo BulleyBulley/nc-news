@@ -74,6 +74,7 @@
 
 .logo_section_class:hover {
   filter: brightness(85%);
+  
 }
 
 .logo_section_class h1 {
@@ -83,6 +84,12 @@
   font-size: 7vw;
   color: #ffffff;
   margin-top: 0;
+  transition: 300ms;
+}
+
+.logo_section_class h1:hover {
+  font-size: 8vw;
+  transition: 300ms;
 }
 
 .logo_section_class a {
@@ -115,8 +122,6 @@
     "article_header article_header"
     "article_topic article_author"
     "article_footer article_footer_b";
-
-    
 }
 
 @keyframes fadeIn {
@@ -132,7 +137,7 @@
   list-style-type: none;
   flex-grow: 1;
   padding: 3vw 5vw;
-  animation:fadeIn 200ms;
+  animation: fadeIn 200ms;
 }
 
 .articles_class a {
@@ -146,12 +151,14 @@
   line-height: 2em;
   padding-left: 1vw;
   color: rgb(19, 11, 1);
+  transition: 300ms;
 }
 
 .articles_class h2:hover {
-  color: beige;
+  color: rgb(100, 0, 0);
   cursor: pointer;
   transition: 300ms;
+  font-size: 1.5vw;
 }
 
 .articles_class h3 {
@@ -246,7 +253,7 @@
   font-size: 1em;
   padding-top: 2vw;
   padding-bottom: 2vw;
-  animation:fadeIn 200ms;
+  animation: fadeIn 200ms;
 }
 
 .sidebar_search_container label {
@@ -260,9 +267,7 @@
 }
 
 #searchTerm {
-  
   height: 1vw;
-  
 }
 
 .sidebar_sort_buttons_items {
@@ -280,9 +285,7 @@
 
 .sidebar_title_search {
   justify-content: center;
- 
 }
-
 
 .sidebar_post_comment_container {
   display: flex;
@@ -306,7 +309,7 @@
   font-size: 1em;
   padding-top: 2vw;
   padding-bottom: 2vw;
-  animation:fadeIn 200ms;
+  animation: fadeIn 200ms;
 }
 
 .sidebar_post_comment_container h2 {
@@ -342,7 +345,7 @@
   display: grid;
 
   margin-bottom: 0vh;
-  
+
   grid-template-rows: auto auto auto auto;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -356,7 +359,7 @@
   list-style-type: none;
   flex-grow: 1;
   padding: 3vw 5vw;
-  animation:fadeIn 1000ms;
+  animation: fadeIn 1000ms;
 }
 
 .single_article_class h2 {
@@ -435,12 +438,10 @@
 }
 
 .voter_button {
-  display:inline;
-  
-font-size: 100%;
-margin-left: 1vw;
+  display: inline;
 
-
+  font-size: 100%;
+  margin-left: 1vw;
 }
 
 /**************             comments      ******************/
@@ -467,7 +468,7 @@ margin-left: 1vw;
     "comments_body"
     "comments_author"
     "comments_votes";
-    animation:fadeIn 500ms;
+  animation: fadeIn 500ms;
 }
 
 .comments_list_body {
@@ -488,7 +489,7 @@ margin-left: 1vw;
   grid-area: comments_votes;
   display: flex;
   flex-direction: row;
-  justify-content:  space-between;
+  justify-content: space-between;
   line-height: 0;
   background: rgba(10, 10, 10, 0.7);
   font-family: "Open Sans", sans-serif;
@@ -508,11 +509,10 @@ margin-left: 1vw;
 }
 
 .comment_voter_button {
-  display:inline;
-font-size: 100%;
-margin-left: 1vw;
+  display: inline;
+  font-size: 100%;
+  margin-left: 1vw;
 }
-
 
 .comments_list_vote h4 {
   margin-left: 1vw;
@@ -630,9 +630,9 @@ margin-left: 1vw;
 .post_article_container {
   display: flex;
   flex-direction: row;
- 
+
   width: 50%;
-  
+
   background: #90949118;
   border-radius: 20px;
   margin-right: 5vw;
@@ -669,13 +669,11 @@ margin-left: 1vw;
 #post_title_input {
   margin-bottom: 5vw;
   margin-right: 5vw;
-  
 }
 
 #post_body_input {
   margin-bottom: 5vw;
   margin-right: 5vw;
-
 }
 
 /**************             media      ******************/

@@ -57,7 +57,6 @@ const Login = () => {
     );
   }
 
-  //if statement for login form
   return (
     <section className="login_class">
       <div className="login_container">

@@ -3,27 +3,25 @@ import { createContext, useContext, useState, useEffect } from "react";
 export const UserContext = createContext();
 
 export const RequiresLogin = ({ children }) => {
-    
-    const { isLoggedIn } = useContext(UserContext)
-    return <div>{isLoggedIn && children}</div>
-}
+  const { isLoggedIn } = useContext(UserContext);
+  return <div>{isLoggedIn && children}</div>;
+};
 
-export const UserProvider = ({children}) =>{
-    const [user, setUser] = useState(null)
-     //console.log(user)
+export const UserProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
 
-    const isLoggedIn = !!user;
-    
-    useEffect (() => {
-        const prevLoggedInUser = localStorage.getItem('loggedInUser')
-       if (prevLoggedInUser) {
-        setUser(prevLoggedInUser) 
-    } 
-    },[])
+  const isLoggedIn = !!user;
 
-    return (
-        <UserContext.Provider value={{ user, setUser, isLoggedIn}}>
-            {children}
-        </UserContext.Provider>
-    )
+  useEffect(() => {
+    const prevLoggedInUser = localStorage.getItem("loggedInUser");
+    if (prevLoggedInUser) {
+      setUser(prevLoggedInUser);
+    }
+  }, []);
+
+  return (
+    <UserContext.Provider value={{ user, setUser, isLoggedIn }}>
+      {children}
+    </UserContext.Provider>
+  );
 };

@@ -18,10 +18,13 @@ const ListComments = ({ comments }) => {
                     <h3>Author: {comment.author}</h3>
                   </div>
                   <div className="comments_list_vote_container">
-                  <div className="comments_list_vote">
-                  <CommentVoter votesComment={comment.votes} comment_id={comment.comment_id} />
-                  <CommentDelete comment_id={comment.comment_id}/>  
-                  </div>
+                    <div className="comments_list_vote">
+                      <CommentVoter
+                        votesComment={comment.votes}
+                        comment_id={comment.comment_id}
+                      />
+                      <CommentDelete comment_id={comment.comment_id} />
+                    </div>
                   </div>
                 </div>
               </li>

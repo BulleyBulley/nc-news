@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import ListSingleArticle from "./ListSingleArticle";
-import { getSingleArticle} from "../utils/Api";
-
+import { getSingleArticle } from "../utils/Api";
 
 const ShowSingleArticle = () => {
   const [singleArticle, setSingleArticle] = useState({});
-    const { article_id } = useParams();
+  const { article_id } = useParams();
 
   useEffect(() => {
     getSingleArticle(article_id).then((response) => {
       setSingleArticle(response);
     });
   }, [article_id]);
-
-
 
   return (
     <>

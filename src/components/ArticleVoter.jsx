@@ -5,7 +5,7 @@ import { RequiresLogin, UserContext } from "../utils/User";
 const ArticleVoter = ({ votes, article_id }) => {
   const [voteChange, setVoteChange] = useState(0);
   const [isError, setIsError] = useState(false);
-  const { isLoggedIn, user } = useContext(UserContext);
+  const { isLoggedIn } = useContext(UserContext);
 
   const handleVote = () => {
     setIsError(false);
@@ -27,27 +27,26 @@ const ArticleVoter = ({ votes, article_id }) => {
   };
   return (
     <>
-    
       <div className="articles_voter_container">
         <label htmlFor="voter_button_id">
           <h4>Votes: {votes + voteChange}</h4>
         </label>
         <RequiresLogin isLoggedIn={isLoggedIn}>
-        <button
-          className="voter_button"
-          id="voter_button_id"
-          onClick={handleVote}
-        >
-          <i class="fas fa-thumbs-up"></i>
-        </button>
+          <button
+            className="voter_button"
+            id="voter_button_id"
+            onClick={handleVote}
+          >
+            <i class="fas fa-thumbs-up"></i>
+          </button>
 
-        <button
-          className="voter_button"
-          id="voter_button_id"
-          onClick={handleVoteDown}
-        >
-          <i class="fas fa-thumbs-down"></i>
-        </button>
+          <button
+            className="voter_button"
+            id="voter_button_id"
+            onClick={handleVoteDown}
+          >
+            <i class="fas fa-thumbs-down"></i>
+          </button>
         </RequiresLogin>
       </div>
     </>
