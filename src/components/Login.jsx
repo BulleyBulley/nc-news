@@ -66,7 +66,7 @@ const Login = () => {
           <input
             type="text"
             name="username"
-            placeholder="username (guest? try grumpy19)"
+            placeholder="guest? try grumpy19"
             value={form.username}
             onChange={handleChange}
             required

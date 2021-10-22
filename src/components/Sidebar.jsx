@@ -112,13 +112,16 @@ const Sidebar = (props) => {
               }}
             > 
               <TextField
-              label="Title Search" variant="filled"
+              label="" variant="outlined"
+              hiddenLabel
                 type="text"
                 id="searchTerm"
+                placeholder="Title Search"
                 onChange={(event) => {
                   setNewSearchTerm(event.target.value);
                 }}
                 value={newSearchTerm}
+                size='small'
               />
               <Button type='submit' variant="contained">Search</Button>
             </form>
