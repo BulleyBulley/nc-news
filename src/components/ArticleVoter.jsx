@@ -16,6 +16,15 @@ const ArticleVoter = ({ votes, article_id }) => {
       setVoteChange((currVoteChange) => currVoteChange - 1);
     });
   };
+  const handleVoteDown = () => {
+    setIsError(false);
+    setVoteChange((currVoteChange) => currVoteChange - 1);
+    patchVotes(article_id, -1).catch(() => {
+      console.log("in downvotes catch");
+      setIsError(true);
+      setVoteChange((currVoteChange) => currVoteChange + 1);
+    });
+  };
   return (
     <>
     
@@ -30,6 +39,14 @@ const ArticleVoter = ({ votes, article_id }) => {
           onClick={handleVote}
         >
           <i class="fas fa-thumbs-up"></i>
+        </button>
+
+        <button
+          className="voter_button"
+          id="voter_button_id"
+          onClick={handleVoteDown}
+        >
+          <i class="fas fa-thumbs-down"></i>
         </button>
         </RequiresLogin>
       </div>
