@@ -5,7 +5,7 @@ import { UserContext, RequiresLogin } from "../utils/User";
 const Login = () => {
   const { isLoggedIn, user, setUser } = useContext(UserContext);
 
-  console.log(isLoggedIn, "<------ isLoggedIn");
+  
   const [form, setForm] = useState({ username: "" });
   // eslint-disable-next-line
   const [err, setErr ] = useState(null);

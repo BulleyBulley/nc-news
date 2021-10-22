@@ -442,6 +442,29 @@
   margin-left: 1vw;
 }
 
+.single_article_list_vote i {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.article_delete_button_container {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.78em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(255, 255, 255);
+  padding-left: 1vw;
+  margin-right: 1vw;
+}
+
+.article_delete_button_container label {
+font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(255, 255, 255);
+  padding-left: 1vw;
+  margin-right: 1vw;
+
+}
 /**************             comments      ******************/
 
 .comments_class ul {

@@ -86,8 +86,21 @@ const postArticle = (postForm) => {
 
 const deleteComment = (comment_id) => {
   return listApi
-    .delete(`/comments/:comment_id`)
+    .delete(`/comments/${comment_id}`)
     .then((response) => {
+      console.log(response)
+      return response;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+const deleteArticle = (article_id) => {
+  return listApi
+    .delete(`/articles/${article_id}`)
+    .then((response) => {
+      console.log(response)
       return response;
     })
     .catch((err) => {
@@ -106,4 +119,5 @@ export {
   patchVotesComment,
   postArticle,
   deleteComment,
+  deleteArticle
 };

@@ -11,7 +11,7 @@ const ArticleVoter = ({ votes, article_id }) => {
   const handleVote = () => {
     setIsError(false);
     setVoteChange((currVoteChange) => currVoteChange + 1);
-    patchVotes(article_id, 1).catch((error) => {
+    patchVotes(article_id, 1).catch(() => {
       setIsError(true);
       setVoteChange((currVoteChange) => currVoteChange - 1);
     });
@@ -36,7 +36,7 @@ const ArticleVoter = ({ votes, article_id }) => {
             id="voter_button_id"
             onClick={handleVote}
           >
-            <i class="fas fa-thumbs-up"></i>
+            <i className="fas fa-thumbs-up"></i>
           </button>
 
           <button
@@ -44,7 +44,7 @@ const ArticleVoter = ({ votes, article_id }) => {
             id="voter_button_id"
             onClick={handleVoteDown}
           >
-            <i class="fas fa-thumbs-down"></i>
+            <i className="fas fa-thumbs-down"></i>
           </button>
         </RequiresLogin>
       </div>

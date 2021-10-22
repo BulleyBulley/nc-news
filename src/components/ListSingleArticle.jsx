@@ -1,4 +1,5 @@
 import React from "react";
+import ArticleDelete from "./ArticleDelete";
 import ArticleVoter from "./ArticleVoter";
 
 const ListSingleArticle = ({ singleArticle }) => {
@@ -34,6 +35,7 @@ const ListSingleArticle = ({ singleArticle }) => {
                   votes={singleArticle.votes}
                   article_id={singleArticle.article_id}
                 />
+                <ArticleDelete article_id={singleArticle.article_id}/>
               </div>
             </div>
           </li>

@@ -10,23 +10,19 @@ const CommentVoter = ({ votesComment, comment_id }) => {
 
   const handleVoteComment = () => {
     setIsErrorComment(false);
-    setVoteChangeComment((currVoteChangeComment) => currVoteChangeComment + 1);
+    //setVoteChangeComment((currVoteChangeComment) => currVoteChangeComment + 1);
     patchVotesComment(comment_id, 1).catch(() => {
       setIsErrorComment(true);
-      setVoteChangeComment(
-        (currVoteChangeComment) => currVoteChangeComment - 1
-      );
+      //setVoteChangeComment((currVoteChangeComment) => currVoteChangeComment - 1);
     });
   };
 
   const handleVoteDownComment = () => {
     setIsErrorComment(false);
-    setVoteChangeComment((currVoteChangeComment) => currVoteChangeComment - 1);
+    //setVoteChangeComment((currVoteChangeComment) => currVoteChangeComment - 1);
     patchVotesComment(comment_id, -1).catch(() => {
       setIsErrorComment(true);
-      setVoteChangeComment(
-        (currVoteChangeComment) => currVoteChangeComment + 1
-      );
+      //setVoteChangeComment((currVoteChangeComment) => currVoteChangeComment + 1);
     });
   };
   return (
@@ -41,14 +37,14 @@ const CommentVoter = ({ votesComment, comment_id }) => {
             id="comment_voter_button_id"
             onClick={handleVoteComment}
           >
-            <i class="fas fa-thumbs-up"></i>
+            <i className="fas fa-thumbs-up"></i>
           </button>
           <button
             className="comment_voter_button"
             id="comment_voter_button_id"
             onClick={handleVoteDownComment}
           >
-            <i class="fas fa-thumbs-down"></i>
+            <i className="fas fa-thumbs-down"></i>
           </button>
         </RequiresLogin>
       </div>

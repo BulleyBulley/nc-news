@@ -7,7 +7,7 @@ import TextField from "@mui/material/TextField";
 
 const SidebarCommentsSection = (props) => {
   const { isLoggedIn, user } = useContext(UserContext);
-
+  const { comments, setComments } = props
   const { article_id } = useParams();
 
   const [form, setForm] = useState({ username: user, body: "" });
@@ -15,13 +15,14 @@ const SidebarCommentsSection = (props) => {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
+    
     setForm((values) => ({ ...values, [name]: value }));
   };
 
   const AddComment = (event) => {
     event.preventDefault();
     postComment(form, article_id);
-    setForm({ username: user, body: "" });
+       setForm({ username: user, body: "" });
   };
 
   if (!isLoggedIn)

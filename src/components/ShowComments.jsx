@@ -12,7 +12,7 @@ const ShowComments = (props) => {
     getCommentsByArticle(article_id).then((response) => {
       setComments(response);
     });
-    // eslint-disable-next-line
+    
   }, [comments]);
 
   return (
