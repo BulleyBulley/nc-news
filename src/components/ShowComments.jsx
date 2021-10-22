@@ -5,15 +5,14 @@ import { getCommentsByArticle } from "../utils/Api";
 import ListComments from "./ListComments";
 
 const ShowComments = (props) => {
-  const { setComments } = props;
-  const { comments } = props;
-  const { article_id } = useParams();
+  const { comments, setComments } = props;
+   const { article_id } = useParams();
 
   useEffect(() => {
     getCommentsByArticle(article_id).then((response) => {
       setComments(response);
     });
-  }, [article_id]);
+  }, [comments]);
 
   return (
     <>

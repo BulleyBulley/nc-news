@@ -10,7 +10,7 @@ const CommentVoter = ({ votesComment, comment_id }) => {
   const handleVoteComment = () => {
     setIsErrorComment(false);
     setVoteChangeComment((currVoteChangeComment) => currVoteChangeComment + 1);
-    patchVotesComment(comment_id, 1).catch(() => {
+    patchVotesComment(comment_id, 1).catch((isErrorComment) => {
       setIsErrorComment(true);
       setVoteChangeComment(
         (currVoteChangeComment) => currVoteChangeComment - 1

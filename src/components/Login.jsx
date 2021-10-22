@@ -29,8 +29,7 @@ const Login = () => {
           setUser(form.username);
           localStorage.setItem("loggedInUser", form.username);
         }
-      })
-      .catch((err) => {
+      }).catch((err) => {
         setErr("User Not Found");
         console.log(err);
       });

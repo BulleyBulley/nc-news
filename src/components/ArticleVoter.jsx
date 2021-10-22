@@ -10,8 +10,7 @@ const ArticleVoter = ({ votes, article_id }) => {
   const handleVote = () => {
     setIsError(false);
     setVoteChange((currVoteChange) => currVoteChange + 1);
-    patchVotes(article_id, 1).catch(() => {
-      console.log("in votes catch");
+    patchVotes(article_id, 1).catch((error) => {
       setIsError(true);
       setVoteChange((currVoteChange) => currVoteChange - 1);
     });
@@ -19,8 +18,7 @@ const ArticleVoter = ({ votes, article_id }) => {
   const handleVoteDown = () => {
     setIsError(false);
     setVoteChange((currVoteChange) => currVoteChange - 1);
-    patchVotes(article_id, -1).catch(() => {
-      console.log("in downvotes catch");
+    patchVotes(article_id, -1).catch((error) => {
       setIsError(true);
       setVoteChange((currVoteChange) => currVoteChange + 1);
     });
