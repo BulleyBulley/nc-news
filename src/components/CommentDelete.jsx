@@ -20,7 +20,7 @@ const CommentDelete = ({comment_id}) => {
     return (
         <>
         <RequiresLogin isLoggedIn={isLoggedIn}>
-          <div className="delete_button_container">
+          <div className="comment_delete_button_container">
             <label htmlFor="comment_delete_button_id">
               Delete
             </label>
