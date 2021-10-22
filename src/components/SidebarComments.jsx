@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { useState, useContext } from "react";
 import { postComment } from "../utils/Api";
 import { RequiresLogin, UserContext } from "../utils/User";
+import TextField from '@mui/material/TextField';
 
 const SidebarCommentsSection = (props) => {
   const { isLoggedIn, user } = useContext(UserContext);
@@ -40,7 +41,7 @@ const SidebarCommentsSection = (props) => {
           <h2>Logged in as: {user}</h2>
         <form className="post_comment_form_class" 
         onSubmit={AddComment}>
-          <textarea
+          <TextField
             type="text"
             name="body"
             placeholder="Add Comment"

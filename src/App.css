@@ -178,7 +178,7 @@
 
 .articles_list_header {
   grid-area: article_header;
-  background: linear-gradient(315deg, #68201e81 49.43%, #c4110118 100%);
+  background: linear-gradient(315deg, #8a2a2781 49.43%, #c4110118 100%);
   border-radius: 5px;
 }
 
@@ -434,6 +434,13 @@
   border-radius: 5px;
 }
 
+.voter_button {
+  display:inline;
+  
+font-size: 100%;
+margin-left: 1vw;
+}
+
 /**************             comments      ******************/
 
 .comments_class ul {
@@ -491,6 +498,12 @@
 .comments_list_vote i {
   display: flex;
   justify-content: flex-start;
+}
+
+.comment_voter_button {
+  display:inline;
+font-size: 100%;
+margin-left: 1vw;
 }
 
 .comments_list_vote h4 {

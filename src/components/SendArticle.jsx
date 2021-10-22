@@ -24,15 +24,16 @@ const theme = createTheme({
 
 const SendArticle = () => {
   const { isLoggedIn, user } = useContext(UserContext);
-  const [postTopics, setSelectedPostTopics] = useState([''])
-  const [postTopicChoice, setPostTopicChoice] = useState('')
+  const [postTopics, setSelectedPostTopics] = useState([])
+  const [postTopicChoice, setPostTopicChoice] = useState([])
 
 
   const [postForm, setPostForm] = useState({
-    username: user,
+    author: user,
     body: "",
-    topic: "coding",
+    topic: "",
     title: "",
+    votes: '0'
   });
 
   useEffect(() => {
@@ -42,17 +43,20 @@ const SendArticle = () => {
   }, [setSelectedPostTopics]);
 
   const handleChange = (event) => {
-      console.log(event.target.value)
-    const name = event.target.name;
+      console.log(event.target.name)
+    let name = event.target.name;
+    //if(name === "username") name = 'author'
     const value = event.target.value;
+   
     setPostForm((values) => ({ ...values, [name]: value }));
   };
 
   const AddPost = (event) => {
     event.preventDefault();
+    console.log(postForm)
     
     postArticle(postForm);
-    setPostForm({ username: user, body: "", topic: "", title: "" });
+    setPostForm({ author: user, body: "", topic: [], title: "" });
   };
 
   if (!isLoggedIn)
@@ -85,8 +89,11 @@ const SendArticle = () => {
                 id="topics_id"
                 name="topic"
                 placeholder="Topics"
-                value={postTopicChoice}
-                onClick={handleChange}
+                value=''
+                onChange={(event) => {
+                  setPostTopicChoice(event.target.value)
+                  handleChange(event)
+                }}
               >
                 {postTopics.map((topic) => {
                   return <option key={topic.slug}>{topic.slug}</option>;

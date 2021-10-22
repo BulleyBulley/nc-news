@@ -78,9 +78,11 @@ const patchVotesComment = (comment_id, voteComment) => {
 }
 
 const postArticle = (postForm) => {
-  return listApi.post(`/articles`, postForm).then((response) => {
+  console.log(postForm, '<---postForm in API')
+  
+    return listApi.post(`/articles`, postForm ).then((response) => {
     
-    return response.data.postedArticle;
+    return response;
   })
   .catch((err) => {
     console.log(err);

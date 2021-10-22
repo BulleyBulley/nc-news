@@ -18,6 +18,18 @@ const CommentVoter = ({ votesComment, comment_id }) => {
       );
     });
   };
+
+  const handleVoteDownComment = () => {
+    setIsErrorComment(false);
+    setVoteChangeComment((currVoteChangeComment) => currVoteChangeComment - 1);
+    patchVotesComment(comment_id, -1).catch(() => {
+      console.log("in comment votes catch");
+      setIsErrorComment(true);
+      setVoteChangeComment(
+        (currVoteChangeComment) => currVoteChangeComment + 1
+      );
+    });
+  };
   return (
     <>
       <div className="comment_voter_container">
@@ -31,6 +43,13 @@ const CommentVoter = ({ votesComment, comment_id }) => {
           onClick={handleVoteComment}
         >
           <i class="fas fa-thumbs-up"></i>
+        </button>
+        <button
+          className="comment_voter_button"
+          id="comment_voter_button_id"
+          onClick={handleVoteDownComment}
+        >
+          <i class="fas fa-thumbs-down"></i>
         </button>
         </RequiresLogin>
       </div>
