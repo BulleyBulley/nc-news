@@ -38,7 +38,7 @@ const Sidebar = (props) => {
     getTopics().then((response) => {
       setSelectedTopics(response);
     });
-  }, []);
+  }, [setSelectedTopics]);
 
   return (
     <section className="sidebar_section_class">

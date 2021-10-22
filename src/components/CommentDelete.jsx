@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
+import { useState, useContext } from "react";
 import { deleteComment } from "../utils/Api"
 import { RequiresLogin, UserContext } from "../utils/User";
 
 const CommentDelete = ({comment_id}) => {
-    const [commentToDelete, setCommentToDelete] = useState()
-    const [isError, setIsError] = useState(false)
-    const { isLoggedIn, user } = useContext(UserContext)
+    const [setCommentToDelete] = useState()
+    const [setIsError] = useState(false)
+    const { isLoggedIn } = useContext(UserContext)
 
     const handleDelete = () => {
         setIsError(false);

@@ -10,8 +10,7 @@ const ShowArticles = (props) => {
   const { sortBy, orderBy, searchTerm, topicChoice } = props;
 
   useEffect(() => {
-    console.log("calling api again");
-    setLoading(true);
+     setLoading(true);
     getArticles(sortBy, orderBy, searchTerm, page, topicChoice)
       .then((response) => {
         setArticles(response);

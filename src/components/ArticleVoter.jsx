@@ -4,7 +4,7 @@ import { RequiresLogin, UserContext } from "../utils/User";
 
 const ArticleVoter = ({ votes, article_id }) => {
   const [voteChange, setVoteChange] = useState(0);
-  const [isError, setIsError] = useState(false);
+  const [error, setIsError] = useState(false);
   const { isLoggedIn } = useContext(UserContext);
 
   const handleVote = () => {
