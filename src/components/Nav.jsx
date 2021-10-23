@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <nav className="nav_class">
-      <Link className="nav_text" to="/reading_list">
+      
+      {/* <Link className="nav_text" to="/reading_list">
         Reading List
-      </Link>
+      </Link> */}
       <Link className="nav_text" to="/post">
         Post
       </Link>
