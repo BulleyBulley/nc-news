@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
-@import url("../src/font/css/all.css");
+
 
 .main_body_container {
   display: grid;
@@ -221,10 +221,7 @@
   border-radius: 5px;
 }
 
-.articles_voter_container {
-  display: flex;
-  justify-content: flex-start;
-}
+
 
 /**************             sidebar      ******************/
 .sidebar_section_class {
@@ -431,40 +428,25 @@
 .single_article_list_footer_b {
   grid-area: single_article_footer_b;
   background: rgba(24, 23, 12, 0.966);
-  line-height: 0;
   border-radius: 5px;
-}
+ display:flex;
+ flex-direction: row;
+ align-content: center;
 
-.voter_button {
-  display: inline;
-
-  font-size: 100%;
-  margin-left: 1vw;
-}
-
-.single_article_list_vote i {
-  display: flex;
-  justify-content: flex-start;
 }
 
 .article_delete_button_container {
   display: flex;
-  justify-content: flex-end;
-  font-size: 0.78em;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: rgb(255, 255, 255);
-  padding-left: 1vw;
-  margin-right: 1vw;
-}
-
-.article_delete_button_container label {
-font-size: 1rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: rgb(255, 255, 255);
-  padding-left: 1vw;
-  margin-right: 1vw;
 
 }
+
+.article_voter_button_container {
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
 /**************             comments      ******************/
 
 .comments_class ul {

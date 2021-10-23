@@ -15,8 +15,8 @@ const ArticleDelete = ({ article_id, author }) => {
   return (
     <>
       <RequiresLogin isLoggedIn={isLoggedIn}>
-        <div className="article_delete_button_container">
-          <label htmlFor="article_delete_button_id">Delete</label>
+        <div className='article_delete_button_container'>
+          <label htmlFor="article_delete_button_id"><h4>Delete</h4></label>
 
           <button
             className="article_delete_button"
@@ -24,9 +24,9 @@ const ArticleDelete = ({ article_id, author }) => {
             onClick={handleDelete}
             disabled={user!==author}
           >
-            <i className="fa fa-trash" aria-hidden="true"></i>
+            <i class="far fa-trash-alt"></i>
           </button>
-        </div>
+          </div>
       </RequiresLogin>
     </>
   );

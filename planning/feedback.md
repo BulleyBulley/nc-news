@@ -2,7 +2,7 @@
 
 ## README - write your own and make sure that it:
 
-- [ ] has a link to the deployed version
+- [x ] has a link to the deployed version
 - [x] provides general info about your app
 - [ ] includes links to your back end repo
 - [x] specifies the minimum version of Node required to run locally (check your Node version, `node --version` and use the major version that you are on)
@@ -39,18 +39,18 @@
 - [x] Can vote on comments
 - [ ] Can vote a maximum of once in either direction per page load
 - [x] Votes are persistent when page is refreshed
-- [ ] Can post new comments, which are persistent
+- [x ] Can post new comments, which are persistent
 
 ### Additional functionality:
 
-- [ ] Can only delete comments of logged in user
-- [ ] Deleted comments don't re-appear on re-render/refresh
+- [x ] Can only delete comments of logged in user
+- [x ] Deleted comments don't re-appear on re-render/refresh
 - [ ] sort comments by date created / votes
 - [x] navigate over pages of articles (if implemented in back-end)
 - [ ] navigate over pages of comments (if implemented in back-end)
 - [ ] filter / display articles by specific user
-- [ ] post new article
-- [ ] delete logged in user's articles
+- [x ] post new article
+- [x ] delete logged in user's articles
 
 ## Error Handling
 
@@ -68,9 +68,9 @@
 - [x] Handle asynchronicity clearly (i.e. isLoading pattern)
 - [x] Functions are DRY (`handleChange` for controlled components / api calls)
 - [x] Use object destructuring where possible
-- [ ] Tidy? If not: ESLint / Prettier
+- [x ] Tidy? If not: ESLint / Prettier
 - [x] `node_modules` git ignored
-- [ ] No `console.log`s / comments
+- [x ] No `console.log`s / comments
 - [x] remove unnecessary files (e.g. App.test.js)
 
 ## MAKE SURE ALL TESTS ARE STILL PASSING IN BACK END

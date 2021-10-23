@@ -26,11 +26,12 @@ const ArticleVoter = ({ votes, article_id }) => {
   };
   return (
     <>
-      <div className="articles_voter_container">
+      
         <label htmlFor="voter_button_id">
           <h4>Votes: {votes + voteChange}</h4>
         </label>
         <RequiresLogin isLoggedIn={isLoggedIn}>
+        <div className='article_voter_button_container'>
           <button
             className="voter_button"
             id="voter_button_id"
@@ -44,10 +45,12 @@ const ArticleVoter = ({ votes, article_id }) => {
             id="voter_button_id"
             onClick={handleVoteDown}
           >
+            
             <i className="fas fa-thumbs-down"></i>
           </button>
+          </div>
         </RequiresLogin>
-      </div>
+        
     </>
   );
 };
