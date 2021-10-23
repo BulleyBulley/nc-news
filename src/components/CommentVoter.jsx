@@ -7,6 +7,7 @@ const CommentVoter = ({ votesComment, comment_id }) => {
   // eslint-disable-next-line
   const [isErrorComment, setIsErrorComment] = useState(false);
   const { isLoggedIn } = useContext(UserContext);
+  const [disable, setDisable] = useState(false);
 
   const handleVoteComment = () => {
     setIsErrorComment(false);
@@ -35,14 +36,22 @@ const CommentVoter = ({ votesComment, comment_id }) => {
           <button
             className="comment_voter_button"
             id="comment_voter_button_id"
-            onClick={handleVoteComment}
+            disabled={disable}
+            onClick={() => {
+              handleVoteComment()
+              setDisable(true)
+            }}
           >
             <i className="fas fa-thumbs-up"></i>
           </button>
           <button
             className="comment_voter_button"
             id="comment_voter_button_id"
-            onClick={handleVoteDownComment}
+            disabled={disable}
+            onClick={() => {
+              handleVoteDownComment()
+              setDisable(true)
+            }}
           >
             <i className="fas fa-thumbs-down"></i>
           </button>
