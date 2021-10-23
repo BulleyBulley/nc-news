@@ -23,7 +23,7 @@ const ListComments = ({ comments }) => {
                         votesComment={comment.votes}
                         comment_id={comment.comment_id}
                       />
-                      <CommentDelete comment_id={comment.comment_id} />
+                      <CommentDelete author={comment.author} comment_id={comment.comment_id} />
                     </div>
                   </div>
                 </div>

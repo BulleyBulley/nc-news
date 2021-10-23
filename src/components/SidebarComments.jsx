@@ -7,7 +7,6 @@ import TextField from "@mui/material/TextField";
 
 const SidebarCommentsSection = (props) => {
   const { isLoggedIn, user } = useContext(UserContext);
-  const { comments, setComments } = props
   const { article_id } = useParams();
 
   const [form, setForm] = useState({ username: user, body: "" });

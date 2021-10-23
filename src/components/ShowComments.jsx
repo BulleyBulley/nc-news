@@ -13,7 +13,7 @@ const ShowComments = (props) => {
       setComments(response);
     });
     
-  }, [comments]);
+  }, [comments, setComments, article_id]);
 
   return (
     <>

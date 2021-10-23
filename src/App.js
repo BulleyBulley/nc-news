@@ -37,7 +37,7 @@ function App() {
     <Route exact path='/articles/:article_id'>
       <SidebarCommentsSection comments={comments} setComments={setComments} />
       <section className="single_article_section_class">
-      <ShowSingleArticle />
+      <ShowSingleArticle comments={comments}/>
       <ShowComments comments={comments} setComments={setComments} />
       </section>
     </Route>

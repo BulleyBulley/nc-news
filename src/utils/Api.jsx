@@ -100,7 +100,6 @@ const deleteArticle = (article_id) => {
   return listApi
     .delete(`/articles/${article_id}`)
     .then((response) => {
-      console.log(response)
       return response;
     })
     .catch((err) => {

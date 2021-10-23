@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { RequiresLogin, UserContext } from "../utils/User";
 
 const CommentVoter = ({ votesComment, comment_id }) => {
-  const [voteChangeComment, setVoteChangeComment] = useState(0);
+  const [voteChangeComment] = useState(0);
   // eslint-disable-next-line
   const [isErrorComment, setIsErrorComment] = useState(false);
   const { isLoggedIn } = useContext(UserContext);
