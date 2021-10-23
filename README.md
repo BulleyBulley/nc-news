@@ -4,6 +4,8 @@ Northcoders News, or Read It, is a Reddit style news app. Articles and comments 
 
 The hosted version can be found here:
 
+https://youthful-swartz-ae9724.netlify.app/
+
 ## Prerequisites
 
 Built using Node version 14.17.3
