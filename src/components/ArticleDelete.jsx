@@ -24,7 +24,7 @@ const ArticleDelete = ({ article_id, author }) => {
             onClick={handleDelete}
             disabled={user!==author}
           >
-            <i class="far fa-trash-alt"></i>
+            <i className="far fa-trash-alt"></i>
           </button>
           </div>
       </RequiresLogin>

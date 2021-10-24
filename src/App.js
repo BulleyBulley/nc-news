@@ -12,6 +12,7 @@ import ShowComments from './components/ShowComments';
 import SidebarCommentsSection from './components/SidebarComments';
 import SendArticle from './components/SendArticle';
 import ShowArticlesByTopic from './components/ShowArticlesByTopic';
+import SidebarArticlesByTopic from './components/SidebarArticlesByTopic';
 
 
 
@@ -20,8 +21,8 @@ function App() {
   const [sortBy, setSortBy] = useState()
   const [orderBy, setOrderBy ] = useState()
   const [searchTerm, setTitleSearch] = useState()
-  const [topics, setSelectedTopics] = useState(['default'])
-  const [topicChoice, setTopicChoice] = useState()
+  const [topics, setSelectedTopics] = useState([])
+  const [topicChoice, setTopicChoice] = useState('')
   
   
   return (
@@ -43,7 +44,7 @@ function App() {
       </section>
     </Route>
     <Route exact path='/articles/topics/:topic'>
-    <Sidebar sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} setTitleSearch={setTitleSearch} topics= {topics} setSelectedTopics={setSelectedTopics} topicChoice={topicChoice} setTopicChoice={setTopicChoice}/>
+    <SidebarArticlesByTopic sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} setTitleSearch={setTitleSearch} topics= {topics} setSelectedTopics={setSelectedTopics} topicChoice={topicChoice} setTopicChoice={setTopicChoice}/>
       <ShowArticlesByTopic sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} topicChoice={topicChoice} setTopicChoice={setTopicChoice}/>
       </Route>
 

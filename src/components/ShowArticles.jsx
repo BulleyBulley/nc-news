@@ -11,9 +11,9 @@ const ShowArticles = (props) => {
 
   useEffect(() => {
      setLoading(true);
-    getArticles(sortBy, orderBy, searchTerm, page, topicChoice,)
+    getArticles(sortBy, orderBy, searchTerm, page, topicChoice, setTopicChoice)
       .then((response) => {
-        setTopicChoice('all')
+        setTopicChoice(topicChoice)
         setArticles(response);
         setLoading(false);
       })

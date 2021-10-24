@@ -28,9 +28,6 @@ const Sidebar = (props) => {
     setOrderBy,
     setTitleSearch,
     setSelectedTopics,
-    topics,
-    topicChoice,
-    setTopicChoice,
   } = props;
   const [newSearchTerm, setNewSearchTerm] = useState("");
 
@@ -125,25 +122,6 @@ const Sidebar = (props) => {
               </form>
             </div>
 
-            <div className="sidebar_topic_search">
-              <label htmlFor="topics_id">Topic:</label>
-
-              <select
-                className="select_topics_class"
-                id="topics_id"
-                name="topics"
-                value={topicChoice}
-                onChange={(event) => {
-                  setTopicChoice(event.target.value);
-                }}
-              >
-                {" "}
-                <option key="all">all</option>
-                {topics.map((topic) => {
-                  return <option key={topic.slug}>{topic.slug}</option>;
-                })}
-              </select>
-            </div>
           </div>
         </div>
       </ThemeProvider>
