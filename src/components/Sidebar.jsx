@@ -125,7 +125,7 @@ const Sidebar = (props) => {
               </form>
             </div>
 
-            <div className="sidebar_topic_search">
+            {/* <div className="sidebar_topic_search">
               <label htmlFor="topics_id">Topic:</label>
 
               <select
@@ -143,7 +143,7 @@ const Sidebar = (props) => {
                   return <option key={topic.slug}>{topic.slug}</option>;
                 })}
               </select>
-            </div>
+            </div> */}
           </div>
         </div>
       </ThemeProvider>

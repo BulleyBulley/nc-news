@@ -196,6 +196,10 @@
   border-radius: 5px;
 }
 
+.articles_list_header a {
+text-decoration: none;
+background-color: inherit;
+}
 
 .articles_list_topic:hover {
   filter: brightness(90%);
