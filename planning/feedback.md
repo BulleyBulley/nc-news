@@ -28,7 +28,7 @@
 
 - [x] Serves all articles / top articles
 - [x] Can vote on articles
-- [ ] Can vote a maximum of once in either direction per page load
+- [x ] Can vote a maximum of once in either direction per page load
 - [x] Votes are persistent when page is refreshed
 - [x] Topic pages load only relevant articles (especially when navigating from one topic page to another)
 - [x] Can sort articles by date created / comment_count / votes
@@ -37,7 +37,7 @@
 
 - [x] Individual articles are served with comments
 - [x] Can vote on comments
-- [ ] Can vote a maximum of once in either direction per page load
+- [x ] Can vote a maximum of once in either direction per page load
 - [x] Votes are persistent when page is refreshed
 - [x ] Can post new comments, which are persistent
 

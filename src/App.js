@@ -11,6 +11,7 @@ import ShowSingleArticle from './components/ShowSingleArticle';
 import ShowComments from './components/ShowComments';
 import SidebarCommentsSection from './components/SidebarComments';
 import SendArticle from './components/SendArticle';
+import ShowArticlesByTopic from './components/ShowArticlesByTopic';
 
 
 
@@ -41,6 +42,11 @@ function App() {
       <ShowComments comments={comments} setComments={setComments} />
       </section>
     </Route>
+    <Route exact path='/articles/topics/:topic'>
+    <Sidebar sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} setTitleSearch={setTitleSearch} topics= {topics} setSelectedTopics={setSelectedTopics} topicChoice={topicChoice} setTopicChoice={setTopicChoice}/>
+      <ShowArticlesByTopic sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} topicChoice={topicChoice} setTopicChoice={setTopicChoice}/>
+      </Route>
+
     <Route exact path='/reading_list'>
       <Sidebar sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} setTitleSearch={setTitleSearch} topics= {topics} setSelectedTopics={setSelectedTopics} topicChoice={topicChoice} setTopicChoice={setTopicChoice}/>
       <ReadingList />

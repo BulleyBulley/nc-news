@@ -56,9 +56,11 @@ const ListArticles = ({ articles, page, setPage, loading, err }) => {
                       </Link>
                     </div>
                     <div className="articles_list_topic">
+                    <Link to={`/articles/topics/${article.topic}`}>
                       <h3>
                         Topic:<strong>{article.topic}</strong>
                       </h3>
+                      </Link>
                     </div>
                     <div className="articles_list_author">
                       <h3>

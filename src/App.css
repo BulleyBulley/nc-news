@@ -196,6 +196,7 @@
   border-radius: 5px;
 }
 
+
 .articles_list_topic:hover {
   filter: brightness(90%);
 }
@@ -642,7 +643,7 @@
 
   background: #90949118;
   border-radius: 20px;
-  margin-right: 5vw;
+  margin-right: 3vw;
   margin-left: 10vw;
   padding-left: 1vw;
 
@@ -655,7 +656,7 @@
   font-size: 1em;
   padding-top: 2vw;
   padding-bottom: 2vw;
-  padding-right: 5vw;
+  padding-right: 4vw;
 }
 
 .post_article_container h2 {

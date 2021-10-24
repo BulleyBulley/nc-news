@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
 import ListArticles from "./ListArticles";
 import { getArticles } from "../utils/Api";
+import { useParams } from "react-router";
 
-const ShowArticles = (props) => {
+const ShowArticlesByTopic = (props) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [err, setErr] = useState(null);
   const { sortBy, orderBy, searchTerm, topicChoice, setTopicChoice } = props;
+  const { topic }  = useParams()
 
   useEffect(() => {
      setLoading(true);
-    getArticles(sortBy, orderBy, searchTerm, page, topicChoice,)
+    getArticles(sortBy, orderBy, searchTerm, page, topicChoice)
       .then((response) => {
-        setTopicChoice('all')
+        setTopicChoice(topic)
         setArticles(response);
         setLoading(false);
       })
@@ -21,7 +23,7 @@ const ShowArticles = (props) => {
         setLoading(false);
         setErr("Oh No! Error");
       });
-  }, [sortBy, orderBy, searchTerm, page, topicChoice, setTopicChoice]);
+  }, [sortBy, orderBy, searchTerm, page, topicChoice, topic, setTopicChoice]);
 
   return (
     <>
@@ -38,4 +40,4 @@ const ShowArticles = (props) => {
   );
 };
 
-export default ShowArticles;
+export default ShowArticlesByTopic;
