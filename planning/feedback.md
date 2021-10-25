@@ -57,7 +57,7 @@
 - [x] Bad url
 - [ ] Bad topic slug in url
 - [ ] Bad article id in url
-- [ ] Post comment: (No text in comment body / Can you post without logging in?)
+- [x] Post comment: (No text in comment body / Can you post without logging in?)
 
 ## Code
 

@@ -24,6 +24,8 @@ const getArticles = (sortBy, orderBy, searchTerm, page, topicChoice) => {
 const getSingleArticle = (article_id) => {
   return listApi.get(`/articles/${article_id}`).then(({ data }) => {
     return data;
+  }).catch((err) => {
+    console.log (err)
   });
 };
 

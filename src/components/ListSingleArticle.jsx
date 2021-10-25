@@ -1,10 +1,28 @@
 import React from "react";
+import Box from "@mui/material/Box";
+import LinearProgress from "@mui/material/LinearProgress";
 import ArticleDelete from "./ArticleDelete";
 import ArticleVoter from "./ArticleVoter";
 
-const ListSingleArticle = ({ singleArticle }) => {
+const ListSingleArticle = ({ singleArticle, loading, err }) => {
+  if (loading)
   return (
+    <section className="home_section_class">
+      
+      <div className="preload">
+        <Box sx={{ width: "50%" }}>
+          <h3>loading...</h3>
+          <LinearProgress />
+        </Box>
+        
+      </div>
+    </section>
+  );
+
+  return (
+    
     <div className="single_article_class">
+      {err ? <h2>Article Not Found</h2> : null}
       <div className="single_article_container">
         <ul>
           <li key={singleArticle.article_id}>

@@ -40,6 +40,7 @@
   grid-area: a;
   display: flex;
   justify-content: flex-end;
+  max-height: 7vw;
   background: rgb(196, 196, 196);
   background: linear-gradient(
     90deg,
@@ -55,13 +56,17 @@
   text-decoration: none;
   color: #ffffff;
   font-family: roboto;
-  font-weight: 300;
+  font-weight: 500;
   padding-right: 2vw;
   padding-left: 2vw;
+  border:solid;
+  border-width: 1px;
+  border-radius: 5px;
 }
 
 .nav_text:hover {
-  background-color: rgba(20, 20, 20, 0.705);
+  background-color: rgba(95, 25, 25, 0.705);
+  transition: 300ms;
 }
 
 /**************             logo      ******************/
