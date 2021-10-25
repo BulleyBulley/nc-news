@@ -2,7 +2,14 @@
 
 Northcoders News, or Read It, is a Reddit style news app. Articles and comments can be read, voted for and users can post. It uses a back-end made here:
 
-The hosted version can be found here:
+https://github.com/BulleyBulley/be-nc-news
+
+which is hosted here:
+
+https://pb-nc-news.herokuapp.com/api
+
+
+The hosted version of the front-end can be found here:
 
 https://youthful-swartz-ae9724.netlify.app/
 
@@ -10,11 +17,23 @@ https://youthful-swartz-ae9724.netlify.app/
 
 Built using Node version 14.17.3
 
+
+
+## Installation
+
+1.  Fork this repo on GitHub at
+
+https://github.com/BulleyBulley/nc-news
+
+2. Clone the repo using
+
+```
+git clone https://github.com/<your-username>/nc-news
+
+```
+
 ## Dependencies
-
-1.  Clone this repository to your machine
-
-2. The following dependencies are required -
+ The following dependencies are required -
 
 ```
    "@emotion/react": "^11.5.0",
@@ -30,7 +49,7 @@ Built using Node version 14.17.3
     "react-scripts": "4.0.3",
     "react-select": "^5.1.0",
 ```
-3. These can be installed running 
+3. These can be installed  by running 
 
 ```
 npm install
@@ -38,17 +57,12 @@ npm install
 
 ## Live Hosted application
 
-- 
-
-## Running the app
-
-To run the application run the following command in terminal:
-
+To run
 ```
 npm start
 ```
+will start a development server on your local machine and open a browser window. To be able to post articles, or like articles and comments, the user will need to login. Try grumpy19.
 
-React will start a development server and open a browser window to show the Northcoders News App.
 
 ## Built With
 

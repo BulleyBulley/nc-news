@@ -23,6 +23,7 @@ function App() {
   const [searchTerm, setTitleSearch] = useState()
   const [topics, setSelectedTopics] = useState([])
   const [topicChoice, setTopicChoice] = useState('')
+  const [sortType, setSortType] = useState('created_at');
   
   
   return (
@@ -37,7 +38,7 @@ function App() {
       <ShowArticles sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy} searchTerm={searchTerm} topicChoice={topicChoice} setTopicChoice={setTopicChoice}/>
     </Route>
     <Route exact path='/articles/:article_id'>
-      <SidebarCommentsSection comments={comments} setComments={setComments} />
+      <SidebarCommentsSection comments={comments} setComments={setComments} sortType={sortType} setSortType={setSortType} />
       <section className="single_article_section_class">
       <ShowSingleArticle comments={comments}/>
       <ShowComments comments={comments} setComments={setComments} />
